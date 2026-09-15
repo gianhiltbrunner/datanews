@@ -1,0 +1,211 @@
+# datanews sources — one entry per domain; each domain becomes an OPML folder.
+# type: substack | bluesky | blog | reddit | hackernews
+# Bluesky profile feeds: https://bsky.app/profile/<handle>/rss
+# Run `python scripts/validate_sources.py` after editing.
+domains:
+- slug: data-engineering
+  title: Data Engineering
+  focus: pipelines, orchestration, streaming, ingestion, lakehouse table formats, Spark/DuckDB/Polars, data modelling for pipelines
+  feeds:
+  - title: Data Engineering Weekly
+    url: https://www.dataengineeringweekly.com/feed
+    site: https://www.dataengineeringweekly.com
+    type: substack
+  - title: Seattle Data Guy
+    url: https://seattledataguy.substack.com/feed
+    site: https://seattledataguy.substack.com
+    type: substack
+  - title: Joe Reis
+    url: https://joereis.substack.com/feed
+    site: https://joereis.substack.com
+    type: substack
+  - title: Data Engineering Central
+    url: https://dataengineeringcentral.substack.com/feed
+    site: https://dataengineeringcentral.substack.com
+    type: substack
+  - title: DataExpert.io (Zach Wilson)
+    url: https://blog.dataexpert.io/feed
+    site: https://blog.dataexpert.io
+    type: substack
+  - title: Materialized View (Chris Riccomini)
+    url: https://materializedview.io/feed
+    site: https://materializedview.io
+    type: substack
+  - title: Gunnar Morling
+    url: https://www.morling.dev/index.xml
+    site: https://www.morling.dev
+    type: blog
+  - title: Robin Moffatt (rmoff.net)
+    url: https://rmoff.net/index.xml
+    site: https://rmoff.net
+    type: blog
+  - title: DuckDB Blog
+    url: https://duckdb.org/feed.xml
+    site: https://duckdb.org/news
+    type: blog
+  - title: MotherDuck Blog
+    url: https://motherduck.com/rss.xml
+    site: https://motherduck.com/blog
+    type: blog
+  - title: Dagster Blog
+    url: https://dagster.io/blog/rss.xml
+    site: https://dagster.io/blog
+    type: blog
+  - title: Confluent Blog
+    url: https://www.confluent.io/rss.xml
+    site: https://www.confluent.io/blog
+    type: blog
+  - title: Netflix Tech Blog
+    url: https://netflixtechblog.com/feed
+    site: https://netflixtechblog.com
+    type: blog
+  - title: r/dataengineering (top today)
+    url: https://www.reddit.com/r/dataengineering/top/.rss?t=day
+    site: https://www.reddit.com/r/dataengineering
+    type: reddit
+  - title: Hacker News — data engineering
+    url: https://hnrss.org/newest?q=%22data+engineering%22&points=10
+    site: https://news.ycombinator.com
+    type: hackernews
+  - title: Robin Moffatt (Bluesky)
+    url: https://bsky.app/profile/rmoff.net/rss
+    site: https://bsky.app/profile/rmoff.net
+    type: bluesky
+  - title: Joe Reis (Bluesky)
+    url: https://bsky.app/profile/joereis.bsky.social/rss
+    site: https://bsky.app/profile/joereis.bsky.social
+    type: bluesky
+  - title: Gunnar Morling (Bluesky)
+    url: https://bsky.app/profile/gunnarmorling.dev/rss
+    site: https://bsky.app/profile/gunnarmorling.dev
+    type: bluesky
+  - title: Hannes Mühleisen (Bluesky)
+    url: https://bsky.app/profile/hannes.muehleisen.org/rss
+    site: https://bsky.app/profile/hannes.muehleisen.org
+    type: bluesky
+  - title: Seattle Data Guy (Bluesky)
+    url: https://bsky.app/profile/seattledataguy.bsky.social/rss
+    site: https://bsky.app/profile/seattledataguy.bsky.social
+    type: bluesky
+  - title: DuckDB (Bluesky)
+    url: https://bsky.app/profile/duckdb.org/rss
+    site: https://bsky.app/profile/duckdb.org
+    type: bluesky
+  - title: MotherDuck (Bluesky)
+    url: https://bsky.app/profile/motherduck.com/rss
+    site: https://bsky.app/profile/motherduck.com
+    type: bluesky
+
+- slug: analytics-engineering
+  title: Analytics Engineering
+  focus: dbt and SQL transformation, semantic layers, metrics, BI and data modelling, data quality and testing, analytics workflows
+  feeds:
+  - title: The Analytics Engineering Roundup (dbt Labs)
+    url: https://roundup.getdbt.com/feed
+    site: https://roundup.getdbt.com
+    type: substack
+  - title: dbt Developer Blog
+    url: https://docs.getdbt.com/blog/rss.xml
+    site: https://docs.getdbt.com/blog
+    type: blog
+  - title: benn.substack
+    url: https://benn.substack.com/feed
+    site: https://benn.substack.com
+    type: substack
+  - title: Locally Optimistic
+    url: https://locallyoptimistic.com/feed/
+    site: https://locallyoptimistic.com
+    type: blog
+  - title: Mikkel Dengsøe
+    url: https://mikkeldengsoe.substack.com/feed
+    site: https://mikkeldengsoe.substack.com
+    type: substack
+  - title: Data Patterns (Ergest Xheblati)
+    url: https://ergestx.substack.com/feed
+    site: https://ergestx.substack.com
+    type: substack
+  - title: Learn Analytics Engineering (Madison Schott)
+    url: https://madisonmae.substack.com/feed
+    site: https://madisonmae.substack.com
+    type: substack
+  - title: Sarah's Newsletter (Sarah Krasnik)
+    url: https://sarahsnewsletter.substack.com/feed
+    site: https://sarahsnewsletter.substack.com
+    type: substack
+  - title: Engineering Data (Stephen Bailey)
+    url: https://stkbailey.substack.com/feed
+    site: https://stkbailey.substack.com
+    type: substack
+  - title: r/analyticsengineering (top today)
+    url: https://www.reddit.com/r/analyticsengineering/top/.rss?t=day
+    site: https://www.reddit.com/r/analyticsengineering
+    type: reddit
+  - title: r/DataBuildTool (top today)
+    url: https://www.reddit.com/r/DataBuildTool/top/.rss?t=day
+    site: https://www.reddit.com/r/DataBuildTool
+    type: reddit
+  - title: Hacker News — dbt
+    url: https://hnrss.org/newest?q=dbt&points=5
+    site: https://news.ycombinator.com
+    type: hackernews
+  - title: Benn Stancil (Bluesky)
+    url: https://bsky.app/profile/benn.bsky.social/rss
+    site: https://bsky.app/profile/benn.bsky.social
+    type: bluesky
+  - title: dbt Labs (Bluesky)
+    url: https://bsky.app/profile/getdbt.com/rss
+    site: https://bsky.app/profile/getdbt.com
+    type: bluesky
+
+- slug: data-platform-engineering
+  title: Data Platform Engineering
+  focus: data infrastructure and platform teams, warehouses and lakehouses, catalogs and governance, data contracts and data products, cost, reliability, cloud data services
+  feeds:
+  - title: Data Products (Chad Sanderson)
+    url: https://dataproducts.substack.com/feed
+    site: https://dataproducts.substack.com
+    type: substack
+  - title: Modern Data 101
+    url: https://moderndata101.substack.com/feed
+    site: https://moderndata101.substack.com
+    type: substack
+  - title: Jack Vanlightly
+    url: https://jack-vanlightly.com/blog?format=rss
+    site: https://jack-vanlightly.com
+    type: blog
+  - title: AWS Big Data Blog
+    url: https://aws.amazon.com/blogs/big-data/feed/
+    site: https://aws.amazon.com/blogs/big-data
+    type: blog
+  - title: Databricks Blog
+    url: https://www.databricks.com/feed
+    site: https://www.databricks.com/blog
+    type: blog
+  - title: Snowflake Engineering (Medium)
+    url: https://medium.com/feed/snowflake
+    site: https://medium.com/snowflake
+    type: blog
+  - title: Airbnb Engineering
+    url: https://medium.com/feed/airbnb-engineering
+    site: https://medium.com/airbnb-engineering
+    type: blog
+  - title: Spotify Engineering
+    url: https://engineering.atspotify.com/feed/
+    site: https://engineering.atspotify.com
+    type: blog
+  - title: r/databricks (top today)
+    url: https://www.reddit.com/r/databricks/top/.rss?t=day
+    site: https://www.reddit.com/r/databricks
+    type: reddit
+  - title: r/snowflake (top today)
+    url: https://www.reddit.com/r/snowflake/top/.rss?t=day
+    site: https://www.reddit.com/r/snowflake
+    type: reddit
+  - title: Hacker News — lakehouse
+    url: https://hnrss.org/newest?q=lakehouse&points=5
+    site: https://news.ycombinator.com
+    type: hackernews
+  - title: Simon Willison (Bluesky)
+    url: https://bsky.app/profile/simonwillison.net/rss
+    site: https://bsky.app/profile/simonwillison.net
+    type: bluesky

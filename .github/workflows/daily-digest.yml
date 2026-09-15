@@ -1,0 +1,149 @@
+name: Daily digest
+
+on:
+  schedule:
+    - cron: "0 5 * * *" # 05:00 UTC ≈ 07:00 Zurich
+  workflow_dispatch:
+    inputs:
+      hours:
+        description: Look-back window in hours
+        default: "26"
+      skip_agent:
+        description: Skip the AI summary (rebuild feeds/OPML only)
+        type: boolean
+        default: false
+
+permissions:
+  contents: write
+  id-token: write
+
+concurrency:
+  group: daily-digest
+  cancel-in-progress: false
+
+jobs:
+  digest:
+    runs-on: ubuntu-latest
+    timeout-minutes: 45
+    env:
+      HAS_OAUTH: ${{ secrets.CLAUDE_CODE_OAUTH_TOKEN != '' }}
+      HAS_OPENROUTER: ${{ secrets.OPENROUTER_API_KEY != '' }}
+      LLM_PROVIDER: ${{ vars.LLM_PROVIDER }}
+      DIGEST_MODEL: ${{ vars.DIGEST_MODEL }}
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+          cache: pip
+
+      - name: Install dependencies
+        run: pip install -r requirements.txt
+
+      - name: Set run date
+        run: echo "DATE=$(date -u +%F)" >> "$GITHUB_ENV"
+
+      - name: Fetch feed items
+        run: python scripts/fetch_items.py --hours "${{ inputs.hours || '26' }}"
+
+      - name: Select LLM provider
+        id: provider
+        if: ${{ !inputs.skip_agent }}
+        run: |
+          provider="$LLM_PROVIDER"
+          if [ -z "$provider" ]; then
+            if [ "$HAS_OAUTH" = "true" ]; then provider=claude-oauth
+            elif [ "$HAS_OPENROUTER" = "true" ]; then provider=openrouter
+            else
+              echo "::error::Add a CLAUDE_CODE_OAUTH_TOKEN or OPENROUTER_API_KEY repository secret."
+              exit 1
+            fi
+          fi
+          case "$provider" in
+            claude-oauth)
+              [ "$HAS_OAUTH" = "true" ] || { echo "::error::LLM_PROVIDER=claude-oauth but CLAUDE_CODE_OAUTH_TOKEN is not set."; exit 1; }
+              default_model=claude-opus-5 ;;
+            openrouter)
+              [ "$HAS_OPENROUTER" = "true" ] || { echo "::error::LLM_PROVIDER=openrouter but OPENROUTER_API_KEY is not set."; exit 1; }
+              default_model=anthropic/claude-opus-5 ;;
+            *)
+              echo "::error::Unknown LLM_PROVIDER '$provider' (use claude-oauth or openrouter)."
+              exit 1 ;;
+          esac
+          model="${DIGEST_MODEL:-$default_model}"
+          echo "Using provider=$provider model=$model"
+          echo "provider=$provider" >> "$GITHUB_OUTPUT"
+          echo "model=$model" >> "$GITHUB_OUTPUT"
+
+      - name: Write digests (Claude subscription)
+        if: ${{ steps.provider.outputs.provider == 'claude-oauth' }}
+        uses: anthropics/claude-code-action@v1
+        with:
+          claude_code_oauth_token: ${{ secrets.CLAUDE_CODE_OAUTH_TOKEN }}
+          prompt: |
+            DATE=${{ env.DATE }}
+            Follow the instructions in prompts/digest.md.
+          claude_args: |
+            --model ${{ steps.provider.outputs.model }}
+            --max-turns 60
+            --allowedTools Read,Write,Glob,WebFetch
+
+      - name: Write digests (OpenRouter)
+        if: ${{ steps.provider.outputs.provider == 'openrouter' }}
+        uses: anthropics/claude-code-action@v1
+        with:
+          anthropic_api_key: ${{ secrets.OPENROUTER_API_KEY }}
+          prompt: |
+            DATE=${{ env.DATE }}
+            Follow the instructions in prompts/digest.md.
+          claude_args: |
+            --model ${{ steps.provider.outputs.model }}
+            --max-turns 60
+            --allowedTools Read,Write,Glob,WebFetch
+        env:
+          ANTHROPIC_BASE_URL: https://openrouter.ai/api
+          ANTHROPIC_AUTH_TOKEN: ${{ secrets.OPENROUTER_API_KEY }}
+
+      - name: Check digests were written
+        if: ${{ !inputs.skip_agent }}
+        run: |
+          missing=0
+          for slug in $(python -c "from common import load_sources; print(' '.join(d['slug'] for d in load_sources()['domains']))") all; do
+            if [ -s "digests/$DATE/$slug.md" ]; then echo "ok  $slug"; else echo "::error::missing digests/$DATE/$slug.md"; missing=1; fi
+          done
+          exit $missing
+        env:
+          PYTHONPATH: scripts
+
+      - name: Build feeds, pages and OPML
+        run: python scripts/build_site.py
+
+      - name: Commit digests
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add digests datanews.opml
+          if git diff --cached --quiet; then
+            echo "Nothing to commit"
+          else
+            git commit -m "digest: $DATE"
+            git push
+          fi
+
+      - uses: actions/upload-pages-artifact@v3
+        with:
+          path: public
+
+  deploy:
+    needs: digest
+    runs-on: ubuntu-latest
+    permissions:
+      pages: write
+      id-token: write
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - id: deployment
+        uses: actions/deploy-pages@v4
