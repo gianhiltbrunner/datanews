@@ -7,25 +7,19 @@ jobs:
   probe:
     runs-on: ubuntu-latest
     steps:
-      - name: Probe feeds with different User-Agents
+      - name: Probe Substack workarounds
         run: |
-          uas=(
-            "Mozilla/5.0 (compatible; datanews-bot/1.0; +https://github.com/)"
-            "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/126.0 Safari/537.36"
-            "Feedly/1.0 (+http://www.feedly.com/fetcher.html; like FeedFetcher-Google)"
-            "NetNewsWire (RSS Reader; https://netnewswire.com/)"
-            "curl/8.5.0"
-          )
-          urls=(
-            "https://seattledataguy.substack.com/feed"
-            "https://benn.substack.com/feed"
-            "https://www.reddit.com/r/dataengineering/top/.rss?t=day"
-            "https://old.reddit.com/r/dataengineering/top/.rss?t=day"
-          )
-          for u in "${urls[@]}"; do
-            echo "== $u"
-            for ua in "${uas[@]}"; do
-              code=$(curl -s -o /dev/null -m 20 -A "$ua" -w "%{http_code}" "$u")
-              echo "  $code  $ua"
-            done
-          done
+          ua="Mozilla/5.0 (compatible; datanews-bot/1.0; +https://github.com/)"
+          probe() { printf "  %s  %s\n" "$(curl -s -o /tmp/body -m 25 -A "$ua" -w "%{http_code} %{size_download}B" "$@")" "${@: -1}"; head -c 160 /tmp/body | tr '\n' ' '; echo; }
+          echo "== direct IPv6"
+          probe -6 "https://benn.substack.com/feed"
+          echo "== substack.com URL variants"
+          probe "https://substack.com/@benn/feed"
+          probe "https://benn.substack.com/feed.xml"
+          probe "https://benn.substack.com/api/v1/archive?sort=new&limit=5"
+          echo "== proxies"
+          probe "https://api.rss2json.com/v1/api.json?rss_url=https%3A%2F%2Fbenn.substack.com%2Ffeed"
+          probe "https://r.jina.ai/https://benn.substack.com/feed"
+          probe "https://rsshub.app/substack/benn"
+          probe "https://openrss.org/benn.substack.com"
+          probe "https://feedproxy.feedly.com/https://benn.substack.com/feed"

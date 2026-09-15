@@ -5,10 +5,12 @@ from __future__ import annotations
 import os
 import re
 import subprocess
+import threading
 import time
 import urllib.error
 import urllib.request
 from pathlib import Path
+from urllib.parse import urlsplit
 
 import yaml
 
@@ -16,6 +18,21 @@ ROOT = Path(__file__).resolve().parent.parent
 SOURCES = ROOT / "sources.yaml"
 USER_AGENT = "Mozilla/5.0 (compatible; datanews-bot/1.0; +https://github.com/)"
 RETRYABLE = {429, 500, 502, 503, 504}
+# Hosts that rate-limit bursts: minimum seconds between requests.
+HOST_SPACING = {"www.reddit.com": 4.0, "hnrss.org": 2.0}
+_host_locks = {host: threading.Lock() for host in HOST_SPACING}
+_host_last: dict[str, float] = {}
+
+
+def _throttle(url: str) -> None:
+    host = urlsplit(url).netloc
+    if host not in HOST_SPACING:
+        return
+    with _host_locks[host]:
+        wait = _host_last.get(host, 0.0) + HOST_SPACING[host] - time.monotonic()
+        if wait > 0:
+            time.sleep(wait)
+        _host_last[host] = time.monotonic()
 
 
 def load_sources(path: Path = SOURCES) -> dict:
@@ -31,6 +48,7 @@ def http_get(url: str, timeout: int = 20, retries: int = 2) -> tuple[int, bytes]
     }
     for attempt in range(retries + 1):
         last = attempt == retries
+        _throttle(url)
         try:
             req = urllib.request.Request(url, headers=headers)
             with urllib.request.urlopen(req, timeout=timeout) as resp:
