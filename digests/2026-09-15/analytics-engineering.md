@@ -1,3 +1,17 @@
-# Quiet day in Analytics Engineering
+# dbt 2.0 ships with agent skills, Databricks metric views and a renamed CLI
 
-No items were published across the analytics engineering feeds in the last 26 hours.
+dbt's major version landed on September 14, 2026, followed the same day by a 2.0.1 patch, and it carries the shape of the year: installable agent skills, native metric views on Databricks, and a CLI split into proprietary `dbt` and open-source `dbt-oss`. Around it the window was thin — patch trains from Lightdash and Cube, and a scattering of Medium posts on testing and lineage. No Reddit, Hacker News or Bluesky items came through the analytics engineering feeds this window.
+
+## Top stories
+- **[dbt 2.0.0](https://github.com/dbt-labs/dbt/releases/tag/v2.0.0)** — dbt-core releases. The release adds installation of AgentSkills-format `SKILL.md` directories from installed packages and the project's own `skill-paths`, gated on a new `ai_provider` flag; native Databricks metric view materializations; and a rebuilt ClickHouse path via the new `adbc_clickhouse` driver with connection-level settings and the profile schema wired to the default database. The notes also record the CLI being rebranded to `dbt` for the proprietary build and `dbt-oss` for the open-source one, and a hardened dbt-docs-server image with verified binary downloads, multi-arch support and unprivileged execution. A same-day **[2.0.1](https://github.com/dbt-labs/dbt/releases/tag/v2.0.1)** carries the same feature list. *Why it matters:* the naming split and the `ai_provider` flag put both the commercial boundary and agent tooling into the core toolchain that most analytics engineering work sits on.
+
+## Releases & tools
+- **[Cube v1.7.38](https://github.com/cube-js/cube/releases/tag/v1.7.38)** — bug-fix release that bumps 24 transitive dependencies to clear 97 Dependabot alerts, adds Snowflake `TIMESTAMP_TZ`/`TIMESTAMP_LTZ` support, preserves literal `ORDER BY` aliases in cubesql, and builds one orchestrator API per id rather than one per concurrent caller.
+- **[Lightdash 2.212.1](https://github.com/lightdash/lightdash/releases/tag/2.212.1)** — the newest of three releases in the window; **[2.212.0](https://github.com/lightdash/lightdash/releases/tag/2.212.0)** exposes `lastViewedAt` in the content API, while 2.212.1 keeps the autopilot heartbeat schedule alive with one heartbeat per project.
+
+## Worth reading
+- **[When Bad Data Shouldn't Break Your dbt Pipeline](https://medium.com/@jan.busse/when-bad-data-shouldnt-break-your-dbt-pipeline-ddea13ed768e?source=rss------dbt-5)** — a validate-before-publish pattern on Snowflake that falls back to a bounded last-known-good result instead of failing the run.
+- **[Snowflake External Lineage Is GA: The 8 Limits and 1 Trap Nobody Warns You About](https://medium.com/tech-with-abhishek/snowflake-external-lineage-is-ga-the-8-limits-and-1-trap-nobody-warns-you-about-3c807470dbb3?source=rss------dbt-5)** — a read of the GA documentation for what changed since preview and which constraints bite in practice.
+- **[dbt Metadata Part 1 — The Essentials](https://jeremiahhansen.medium.com/dbt-metadata-part-1-the-essentials-37eadf3ffab5?source=rss------dbt-5)** — an orientation to dbt's artifacts and what each one is good for.
+- **[Build a Real Lakehouse on Your Laptop with DuckDB, Iceberg, and dbt](https://cloudwithazeem.medium.com/build-a-real-lakehouse-on-your-laptop-with-duckdb-iceberg-and-dbt-5b6db7c49e13?source=rss------dbt-5)** — a local lakehouse setup, and an honest account of where local development stops being representative.
+- **[How to lose your mind](https://benn.substack.com/p/how-to-lose-your-mind)** — benn.substack in narrative mode, a timestamped account rather than the usual industry analysis.

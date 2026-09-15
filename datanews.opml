@@ -2,7 +2,7 @@
 <opml version="2.0">
   <head>
     <title>datanews — data platform, analytics &amp; data engineering</title>
-    <dateCreated>Tue, 15 Sep 2026 08:09:04 +0000</dateCreated>
+    <dateCreated>Tue, 15 Sep 2026 09:41:16 +0000</dateCreated>
   </head>
   <body>
     <outline text="Data Engineering" title="Data Engineering">
@@ -14,20 +14,29 @@
       <outline type="rss" text="Materialized View (Chris Riccomini)" title="Materialized View (Chris Riccomini)" xmlUrl="https://materializedview.io/feed" htmlUrl="https://materializedview.io" />
       <outline type="rss" text="Gunnar Morling" title="Gunnar Morling" xmlUrl="https://www.morling.dev/index.xml" htmlUrl="https://www.morling.dev" />
       <outline type="rss" text="Robin Moffatt (rmoff.net)" title="Robin Moffatt (rmoff.net)" xmlUrl="https://rmoff.net/index.xml" htmlUrl="https://rmoff.net" />
+      <outline type="rss" text="InfoQ — AI, ML &amp; Data Engineering" title="InfoQ — AI, ML &amp; Data Engineering" xmlUrl="https://feed.infoq.com/ai-ml-data-eng/" htmlUrl="https://www.infoq.com/ai-ml-data-eng/" />
       <outline type="rss" text="DuckDB Blog" title="DuckDB Blog" xmlUrl="https://duckdb.org/feed.xml" htmlUrl="https://duckdb.org/news" />
       <outline type="rss" text="MotherDuck Blog" title="MotherDuck Blog" xmlUrl="https://motherduck.com/rss.xml" htmlUrl="https://motherduck.com/blog" />
       <outline type="rss" text="Dagster Blog" title="Dagster Blog" xmlUrl="https://dagster.io/blog/rss.xml" htmlUrl="https://dagster.io/blog" />
       <outline type="rss" text="Confluent Blog" title="Confluent Blog" xmlUrl="https://www.confluent.io/rss.xml" htmlUrl="https://www.confluent.io/blog" />
       <outline type="rss" text="Netflix Tech Blog" title="Netflix Tech Blog" xmlUrl="https://netflixtechblog.com/feed" htmlUrl="https://netflixtechblog.com" />
+      <outline type="rss" text="Google News — data engineering" title="Google News — data engineering" xmlUrl="https://news.google.com/rss/search?q=%22data+engineering%22+when:1d&amp;hl=en-US&amp;gl=US&amp;ceid=US:en" htmlUrl="https://news.google.com" />
+      <outline type="rss" text="Medium —" title="Medium —" xmlUrl="https://medium.com/feed/tag/data-engineering" htmlUrl="https://medium.com/tag/data-engineering" />
+      <outline type="rss" text="DEV —" title="DEV —" xmlUrl="https://dev.to/feed/tag/dataengineering" htmlUrl="https://dev.to/t/dataengineering" />
       <outline type="rss" text="r/dataengineering (top today)" title="r/dataengineering (top today)" xmlUrl="https://www.reddit.com/r/dataengineering/top/.rss?t=day" htmlUrl="https://www.reddit.com/r/dataengineering" />
-      <outline type="rss" text="Hacker News — data engineering" title="Hacker News — data engineering" xmlUrl="https://hnrss.org/newest?q=%22data+engineering%22&amp;points=10" htmlUrl="https://news.ycombinator.com" />
+      <outline type="rss" text="Hacker News — data engineering" title="Hacker News — data engineering" xmlUrl="https://hnrss.org/newest?q=%22data+engineering%22" htmlUrl="https://news.ycombinator.com" />
+      <outline type="rss" text="Hacker News — DuckDB" title="Hacker News — DuckDB" xmlUrl="https://hnrss.org/newest?q=duckdb" htmlUrl="https://news.ycombinator.com" />
       <outline type="rss" text="Robin Moffatt (Bluesky)" title="Robin Moffatt (Bluesky)" xmlUrl="https://bsky.app/profile/rmoff.net/rss" htmlUrl="https://bsky.app/profile/rmoff.net" />
-      <outline type="rss" text="Joe Reis (Bluesky)" title="Joe Reis (Bluesky)" xmlUrl="https://bsky.app/profile/joereis.bsky.social/rss" htmlUrl="https://bsky.app/profile/joereis.bsky.social" />
       <outline type="rss" text="Gunnar Morling (Bluesky)" title="Gunnar Morling (Bluesky)" xmlUrl="https://bsky.app/profile/gunnarmorling.dev/rss" htmlUrl="https://bsky.app/profile/gunnarmorling.dev" />
       <outline type="rss" text="Hannes Mühleisen (Bluesky)" title="Hannes Mühleisen (Bluesky)" xmlUrl="https://bsky.app/profile/hannes.muehleisen.org/rss" htmlUrl="https://bsky.app/profile/hannes.muehleisen.org" />
-      <outline type="rss" text="Seattle Data Guy (Bluesky)" title="Seattle Data Guy (Bluesky)" xmlUrl="https://bsky.app/profile/seattledataguy.bsky.social/rss" htmlUrl="https://bsky.app/profile/seattledataguy.bsky.social" />
       <outline type="rss" text="DuckDB (Bluesky)" title="DuckDB (Bluesky)" xmlUrl="https://bsky.app/profile/duckdb.org/rss" htmlUrl="https://bsky.app/profile/duckdb.org" />
       <outline type="rss" text="MotherDuck (Bluesky)" title="MotherDuck (Bluesky)" xmlUrl="https://bsky.app/profile/motherduck.com/rss" htmlUrl="https://bsky.app/profile/motherduck.com" />
+      <outline type="rss" text="Apache Airflow releases" title="Apache Airflow releases" xmlUrl="https://github.com/apache/airflow/releases.atom" htmlUrl="https://github.com/apache/airflow/releases" />
+      <outline type="rss" text="Dagster releases" title="Dagster releases" xmlUrl="https://github.com/dagster-io/dagster/releases.atom" htmlUrl="https://github.com/dagster-io/dagster/releases" />
+      <outline type="rss" text="DuckDB releases" title="DuckDB releases" xmlUrl="https://github.com/duckdb/duckdb/releases.atom" htmlUrl="https://github.com/duckdb/duckdb/releases" />
+      <outline type="rss" text="Polars releases" title="Polars releases" xmlUrl="https://github.com/pola-rs/polars/releases.atom" htmlUrl="https://github.com/pola-rs/polars/releases" />
+      <outline type="rss" text="dlt releases" title="dlt releases" xmlUrl="https://github.com/dlt-hub/dlt/releases.atom" htmlUrl="https://github.com/dlt-hub/dlt/releases" />
+      <outline type="rss" text="Apache DataFusion releases" title="Apache DataFusion releases" xmlUrl="https://github.com/apache/datafusion/releases.atom" htmlUrl="https://github.com/apache/datafusion/releases" />
     </outline>
     <outline text="Analytics Engineering" title="Analytics Engineering">
       <outline type="rss" text="The Analytics Engineering Roundup (dbt Labs)" title="The Analytics Engineering Roundup (dbt Labs)" xmlUrl="https://roundup.getdbt.com/feed" htmlUrl="https://roundup.getdbt.com" />
@@ -37,27 +46,43 @@
       <outline type="rss" text="Mikkel Dengsøe" title="Mikkel Dengsøe" xmlUrl="https://mikkeldengsoe.substack.com/feed" htmlUrl="https://mikkeldengsoe.substack.com" />
       <outline type="rss" text="Data Patterns (Ergest Xheblati)" title="Data Patterns (Ergest Xheblati)" xmlUrl="https://ergestx.substack.com/feed" htmlUrl="https://ergestx.substack.com" />
       <outline type="rss" text="Learn Analytics Engineering (Madison Schott)" title="Learn Analytics Engineering (Madison Schott)" xmlUrl="https://madisonmae.substack.com/feed" htmlUrl="https://madisonmae.substack.com" />
-      <outline type="rss" text="Sarah's Newsletter (Sarah Krasnik)" title="Sarah's Newsletter (Sarah Krasnik)" xmlUrl="https://sarahsnewsletter.substack.com/feed" htmlUrl="https://sarahsnewsletter.substack.com" />
       <outline type="rss" text="Engineering Data (Stephen Bailey)" title="Engineering Data (Stephen Bailey)" xmlUrl="https://stkbailey.substack.com/feed" htmlUrl="https://stkbailey.substack.com" />
+      <outline type="rss" text="Google News — dbt Labs / semantic layer" title="Google News — dbt Labs / semantic layer" xmlUrl="https://news.google.com/rss/search?q=%22dbt+Labs%22+OR+%22semantic+layer%22+OR+%22analytics+engineering%22+when:3d&amp;hl=en-US&amp;gl=US&amp;ceid=US:en" htmlUrl="https://news.google.com" />
+      <outline type="rss" text="Medium —" title="Medium —" xmlUrl="https://medium.com/feed/tag/dbt" htmlUrl="https://medium.com/tag/dbt" />
+      <outline type="rss" text="Medium —" title="Medium —" xmlUrl="https://medium.com/feed/tag/analytics-engineering" htmlUrl="https://medium.com/tag/analytics-engineering" />
       <outline type="rss" text="r/analyticsengineering (top today)" title="r/analyticsengineering (top today)" xmlUrl="https://www.reddit.com/r/analyticsengineering/top/.rss?t=day" htmlUrl="https://www.reddit.com/r/analyticsengineering" />
       <outline type="rss" text="r/DataBuildTool (top today)" title="r/DataBuildTool (top today)" xmlUrl="https://www.reddit.com/r/DataBuildTool/top/.rss?t=day" htmlUrl="https://www.reddit.com/r/DataBuildTool" />
-      <outline type="rss" text="Hacker News — dbt" title="Hacker News — dbt" xmlUrl="https://hnrss.org/newest?q=dbt&amp;points=5" htmlUrl="https://news.ycombinator.com" />
-      <outline type="rss" text="Benn Stancil (Bluesky)" title="Benn Stancil (Bluesky)" xmlUrl="https://bsky.app/profile/benn.bsky.social/rss" htmlUrl="https://bsky.app/profile/benn.bsky.social" />
+      <outline type="rss" text="Hacker News — dbt" title="Hacker News — dbt" xmlUrl="https://hnrss.org/newest?q=dbt" htmlUrl="https://news.ycombinator.com" />
       <outline type="rss" text="dbt Labs (Bluesky)" title="dbt Labs (Bluesky)" xmlUrl="https://bsky.app/profile/getdbt.com/rss" htmlUrl="https://bsky.app/profile/getdbt.com" />
+      <outline type="rss" text="dbt-core releases" title="dbt-core releases" xmlUrl="https://github.com/dbt-labs/dbt-core/releases.atom" htmlUrl="https://github.com/dbt-labs/dbt-core/releases" />
+      <outline type="rss" text="SQLMesh releases" title="SQLMesh releases" xmlUrl="https://github.com/TobikoData/sqlmesh/releases.atom" htmlUrl="https://github.com/TobikoData/sqlmesh/releases" />
+      <outline type="rss" text="SQLGlot releases" title="SQLGlot releases" xmlUrl="https://github.com/tobymao/sqlglot/releases.atom" htmlUrl="https://github.com/tobymao/sqlglot/releases" />
+      <outline type="rss" text="Cube releases" title="Cube releases" xmlUrl="https://github.com/cube-js/cube/releases.atom" htmlUrl="https://github.com/cube-js/cube/releases" />
+      <outline type="rss" text="Lightdash releases" title="Lightdash releases" xmlUrl="https://github.com/lightdash/lightdash/releases.atom" htmlUrl="https://github.com/lightdash/lightdash/releases" />
+      <outline type="rss" text="Great Expectations releases" title="Great Expectations releases" xmlUrl="https://github.com/great-expectations/great_expectations/releases.atom" htmlUrl="https://github.com/great-expectations/great_expectations/releases" />
     </outline>
     <outline text="Data Platform Engineering" title="Data Platform Engineering">
-      <outline type="rss" text="Data Products (Chad Sanderson)" title="Data Products (Chad Sanderson)" xmlUrl="https://dataproducts.substack.com/feed" htmlUrl="https://dataproducts.substack.com" />
       <outline type="rss" text="Modern Data 101" title="Modern Data 101" xmlUrl="https://moderndata101.substack.com/feed" htmlUrl="https://moderndata101.substack.com" />
       <outline type="rss" text="Jack Vanlightly" title="Jack Vanlightly" xmlUrl="https://jack-vanlightly.com/blog?format=rss" htmlUrl="https://jack-vanlightly.com" />
       <outline type="rss" text="AWS Big Data Blog" title="AWS Big Data Blog" xmlUrl="https://aws.amazon.com/blogs/big-data/feed/" htmlUrl="https://aws.amazon.com/blogs/big-data" />
       <outline type="rss" text="Databricks Blog" title="Databricks Blog" xmlUrl="https://www.databricks.com/feed" htmlUrl="https://www.databricks.com/blog" />
+      <outline type="rss" text="Snowflake Blog" title="Snowflake Blog" xmlUrl="https://www.snowflake.com/feed/" htmlUrl="https://www.snowflake.com/en/blog/" />
       <outline type="rss" text="Snowflake Engineering (Medium)" title="Snowflake Engineering (Medium)" xmlUrl="https://medium.com/feed/snowflake" htmlUrl="https://medium.com/snowflake" />
+      <outline type="rss" text="ClickHouse Blog" title="ClickHouse Blog" xmlUrl="https://clickhouse.com/rss.xml" htmlUrl="https://clickhouse.com/blog" />
       <outline type="rss" text="Airbnb Engineering" title="Airbnb Engineering" xmlUrl="https://medium.com/feed/airbnb-engineering" htmlUrl="https://medium.com/airbnb-engineering" />
       <outline type="rss" text="Spotify Engineering" title="Spotify Engineering" xmlUrl="https://engineering.atspotify.com/feed/" htmlUrl="https://engineering.atspotify.com" />
+      <outline type="rss" text="Google News — Databricks / Snowflake" title="Google News — Databricks / Snowflake" xmlUrl="https://news.google.com/rss/search?q=Databricks+OR+Snowflake+when:1d&amp;hl=en-US&amp;gl=US&amp;ceid=US:en" htmlUrl="https://news.google.com" />
+      <outline type="rss" text="Medium —" title="Medium —" xmlUrl="https://medium.com/feed/tag/data-platform" htmlUrl="https://medium.com/tag/data-platform" />
       <outline type="rss" text="r/databricks (top today)" title="r/databricks (top today)" xmlUrl="https://www.reddit.com/r/databricks/top/.rss?t=day" htmlUrl="https://www.reddit.com/r/databricks" />
       <outline type="rss" text="r/snowflake (top today)" title="r/snowflake (top today)" xmlUrl="https://www.reddit.com/r/snowflake/top/.rss?t=day" htmlUrl="https://www.reddit.com/r/snowflake" />
-      <outline type="rss" text="Hacker News — lakehouse" title="Hacker News — lakehouse" xmlUrl="https://hnrss.org/newest?q=lakehouse&amp;points=5" htmlUrl="https://news.ycombinator.com" />
+      <outline type="rss" text="Hacker News — lakehouse / Iceberg" title="Hacker News — lakehouse / Iceberg" xmlUrl="https://hnrss.org/newest?q=iceberg+lakehouse" htmlUrl="https://news.ycombinator.com" />
       <outline type="rss" text="Simon Willison (Bluesky)" title="Simon Willison (Bluesky)" xmlUrl="https://bsky.app/profile/simonwillison.net/rss" htmlUrl="https://bsky.app/profile/simonwillison.net" />
+      <outline type="rss" text="Apache Iceberg releases" title="Apache Iceberg releases" xmlUrl="https://github.com/apache/iceberg/releases.atom" htmlUrl="https://github.com/apache/iceberg/releases" />
+      <outline type="rss" text="Delta Lake releases" title="Delta Lake releases" xmlUrl="https://github.com/delta-io/delta/releases.atom" htmlUrl="https://github.com/delta-io/delta/releases" />
+      <outline type="rss" text="Trino releases" title="Trino releases" xmlUrl="https://github.com/trinodb/trino/releases.atom" htmlUrl="https://github.com/trinodb/trino/releases" />
+      <outline type="rss" text="ClickHouse releases" title="ClickHouse releases" xmlUrl="https://github.com/ClickHouse/ClickHouse/releases.atom" htmlUrl="https://github.com/ClickHouse/ClickHouse/releases" />
+      <outline type="rss" text="DataHub releases" title="DataHub releases" xmlUrl="https://github.com/datahub-project/datahub/releases.atom" htmlUrl="https://github.com/datahub-project/datahub/releases" />
+      <outline type="rss" text="OpenMetadata releases" title="OpenMetadata releases" xmlUrl="https://github.com/open-metadata/OpenMetadata/releases.atom" htmlUrl="https://github.com/open-metadata/OpenMetadata/releases" />
     </outline>
     <outline text="AI Digests" title="AI Digests">
       <outline type="rss" text="datanews · Data Engineering" title="datanews · Data Engineering" xmlUrl="https://gianhiltbrunner.github.io/datanews/feeds/data-engineering.xml" htmlUrl="https://gianhiltbrunner.github.io/datanews/" />
