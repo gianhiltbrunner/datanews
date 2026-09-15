@@ -56,7 +56,7 @@ When all domains are done, write `digests/DATE/all.md`:
   - Only link URLs that appear verbatim in the items file.
   - Never invent links, version numbers, figures or quotes.
 - **Section sizes:**
-  - `Top stories` has 3–5 bullets.
+  - `Top stories` has 1–5 bullets. Never pad it: on a slow day, one strong story beats three weak ones, and career or job-hunting threads don't belong there.
   - The other sections have 0–5 bullets each; leave a section out entirely when it would be empty.
   - Each item appears in at most one section.
 - **Quiet days:** if a domain has fewer than 2 items, the file is:
@@ -67,4 +67,5 @@ When all domains are done, write `digests/DATE/all.md`:
   - Plain Markdown only: no HTML, no front matter.
   - The first line must be the `# ` headline.
 - **Style:** write in English, and keep it neutral, specific and concise.
+- **Dates:** don't name the day of the week. Refer to dates only as they appear in the items.
 - **Scope:** only create files under `digests/DATE/`, and do not modify anything else.
