@@ -64,6 +64,8 @@ python -m venv .venv && .venv/bin/pip install -r requirements.txt
 
 The **Validate sources** workflow runs every Monday and opens an issue when feeds die. Reddit and Hacker News feeds sometimes return 429 or 502 when rate-limited; those failures are usually temporary.
 
+Substack blocks requests from cloud IPs, including GitHub Actions runners. When a feed returns HTTP 403, the scripts fetch it again through [rss2json](https://rss2json.com)'s free API, which needs no key.
+
 ## Run locally
 
 ```sh

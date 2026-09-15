@@ -7,10 +7,9 @@ import argparse
 import sys
 from concurrent.futures import ThreadPoolExecutor
 
-import feedparser
 import yaml
 
-from common import SOURCES, http_get, load_sources
+from common import SOURCES, fetch_entries, load_sources
 
 HEADER = """\
 # datanews sources — one entry per domain; each domain becomes an OPML folder.
@@ -21,11 +20,10 @@ HEADER = """\
 
 
 def check(feed: dict) -> tuple[bool, str]:
-    status, body = http_get(feed["url"], retries=3)
-    if status != 200 or not body:
-        return False, f"HTTP {status}"
-    entries = len(feedparser.parse(body).entries)
-    return (entries > 0), f"{entries} entries"
+    entries, error = fetch_entries(feed["url"], retries=3)
+    if error:
+        return False, error
+    return bool(entries), f"{len(entries)} entries"
 
 
 def main() -> None:

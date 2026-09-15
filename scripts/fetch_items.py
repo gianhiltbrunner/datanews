@@ -11,9 +11,7 @@ from concurrent.futures import ThreadPoolExecutor
 from datetime import datetime, timedelta, timezone
 from urllib.parse import parse_qsl, urlencode, urlsplit, urlunsplit
 
-import feedparser
-
-from common import ROOT, http_get, load_sources
+from common import ROOT, fetch_entries, load_sources
 
 TAG_RE = re.compile(r"<[^>]+>")
 WS_RE = re.compile(r"\s+")
@@ -35,27 +33,17 @@ def canonical(link: str) -> str:
     return urlunsplit((parts.scheme.lower(), parts.netloc.lower(), path, urlencode(query), ""))
 
 
-def entry_time(entry) -> datetime | None:
-    for key in ("published_parsed", "updated_parsed"):
-        if parsed := entry.get(key):
-            return datetime(*parsed[:6], tzinfo=timezone.utc)
-    return None
-
-
 def fetch_feed(feed: dict, cutoff: datetime, per_feed: int) -> tuple[list[dict], str | None]:
-    status, body = http_get(feed["url"])
-    if status != 200 or not body:
-        return [], f"HTTP {status}"
-    parsed = feedparser.parse(body)
+    entries, error = fetch_entries(feed["url"])
+    if error:
+        return [], error
     items = []
-    for entry in parsed.entries:
-        published = entry_time(entry)
-        link = entry.get("link")
+    for entry in entries:
+        published, link = entry["published"], entry["link"]
         if not link or published is None or published < cutoff:
             continue
-        content = entry.get("summary") or (entry.get("content") or [{}])[0].get("value", "")
-        excerpt = clean_text(content, 600)
-        title = clean_text(entry.get("title", ""), 200)
+        excerpt = clean_text(entry["content"], 600)
+        title = clean_text(entry["title"], 200)
         if feed["type"] == "bluesky" or not title:
             title = clean_text(excerpt, 100)
         items.append({
