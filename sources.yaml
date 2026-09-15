@@ -263,6 +263,40 @@ domains:
     url: https://engineering.atspotify.com/feed/
     site: https://engineering.atspotify.com
     type: blog
+  - title: AWS Database Blog
+    url: https://aws.amazon.com/blogs/database/feed/
+    site: https://aws.amazon.com/blogs/database
+    type: blog
+  - title: AWS What's New
+    url: https://aws.amazon.com/about-aws/whats-new/recent/feed/
+    site: https://aws.amazon.com/new
+    type: blog
+    max_items: 15
+  - title: Microsoft Fabric Blog
+    url: https://blog.fabric.microsoft.com/en-us/blog/feed/
+    site: https://blog.fabric.microsoft.com
+    type: blog
+  - title: Azure Updates
+    url: https://www.microsoft.com/releasecommunications/api/v2/azure/rss
+    site: https://azure.microsoft.com/updates
+    type: blog
+    max_items: 10
+  - title: Google Cloud — Data Analytics
+    url: https://cloudblog.withgoogle.com/products/data-analytics/rss/
+    site: https://cloud.google.com/blog/products/data-analytics
+    type: blog
+  - title: Google Cloud — Databases
+    url: https://cloudblog.withgoogle.com/products/databases/rss/
+    site: https://cloud.google.com/blog/products/databases
+    type: blog
+  - title: BigQuery release notes
+    url: https://cloud.google.com/feeds/bigquery-release-notes.xml
+    site: https://cloud.google.com/bigquery/docs/release-notes
+    type: release
+  - title: Google News — cloud data services
+    url: https://news.google.com/rss/search?q=%22Microsoft+Fabric%22+OR+%22Azure+Databricks%22+OR+%22AWS+Glue%22+OR+Redshift+OR+BigQuery+when:1d&hl=en-US&gl=US&ceid=US:en
+    site: https://news.google.com
+    type: news
   - title: Google News — Databricks / Snowflake
     url: https://news.google.com/rss/search?q=Databricks+OR+Snowflake+when:1d&hl=en-US&gl=US&ceid=US:en
     site: https://news.google.com
