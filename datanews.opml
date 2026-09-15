@@ -2,7 +2,7 @@
 <opml version="2.0">
   <head>
     <title>datanews — data platform, analytics &amp; data engineering</title>
-    <dateCreated>Tue, 15 Sep 2026 10:34:47 +0000</dateCreated>
+    <dateCreated>Tue, 15 Sep 2026 14:11:55 +0000</dateCreated>
   </head>
   <body>
     <outline text="Data Engineering" title="Data Engineering">
@@ -71,6 +71,14 @@
       <outline type="rss" text="ClickHouse Blog" title="ClickHouse Blog" xmlUrl="https://clickhouse.com/rss.xml" htmlUrl="https://clickhouse.com/blog" />
       <outline type="rss" text="Airbnb Engineering" title="Airbnb Engineering" xmlUrl="https://medium.com/feed/airbnb-engineering" htmlUrl="https://medium.com/airbnb-engineering" />
       <outline type="rss" text="Spotify Engineering" title="Spotify Engineering" xmlUrl="https://engineering.atspotify.com/feed/" htmlUrl="https://engineering.atspotify.com" />
+      <outline type="rss" text="AWS Database Blog" title="AWS Database Blog" xmlUrl="https://aws.amazon.com/blogs/database/feed/" htmlUrl="https://aws.amazon.com/blogs/database" />
+      <outline type="rss" text="AWS What's New" title="AWS What's New" xmlUrl="https://aws.amazon.com/about-aws/whats-new/recent/feed/" htmlUrl="https://aws.amazon.com/new" />
+      <outline type="rss" text="Microsoft Fabric Blog" title="Microsoft Fabric Blog" xmlUrl="https://blog.fabric.microsoft.com/en-us/blog/feed/" htmlUrl="https://blog.fabric.microsoft.com" />
+      <outline type="rss" text="Azure Updates" title="Azure Updates" xmlUrl="https://www.microsoft.com/releasecommunications/api/v2/azure/rss" htmlUrl="https://azure.microsoft.com/updates" />
+      <outline type="rss" text="Google Cloud — Data Analytics" title="Google Cloud — Data Analytics" xmlUrl="https://cloudblog.withgoogle.com/products/data-analytics/rss/" htmlUrl="https://cloud.google.com/blog/products/data-analytics" />
+      <outline type="rss" text="Google Cloud — Databases" title="Google Cloud — Databases" xmlUrl="https://cloudblog.withgoogle.com/products/databases/rss/" htmlUrl="https://cloud.google.com/blog/products/databases" />
+      <outline type="rss" text="BigQuery release notes" title="BigQuery release notes" xmlUrl="https://cloud.google.com/feeds/bigquery-release-notes.xml" htmlUrl="https://cloud.google.com/bigquery/docs/release-notes" />
+      <outline type="rss" text="Google News — cloud data services" title="Google News — cloud data services" xmlUrl="https://news.google.com/rss/search?q=%22Microsoft+Fabric%22+OR+%22Azure+Databricks%22+OR+%22AWS+Glue%22+OR+Redshift+OR+BigQuery+when:1d&amp;hl=en-US&amp;gl=US&amp;ceid=US:en" htmlUrl="https://news.google.com" />
       <outline type="rss" text="Google News — Databricks / Snowflake" title="Google News — Databricks / Snowflake" xmlUrl="https://news.google.com/rss/search?q=Databricks+OR+Snowflake+when:1d&amp;hl=en-US&amp;gl=US&amp;ceid=US:en" htmlUrl="https://news.google.com" />
       <outline type="rss" text="Medium —" title="Medium —" xmlUrl="https://medium.com/feed/tag/data-platform" htmlUrl="https://medium.com/tag/data-platform" />
       <outline type="rss" text="r/databricks (top today)" title="r/databricks (top today)" xmlUrl="https://www.reddit.com/r/databricks/top/.rss?t=day" htmlUrl="https://www.reddit.com/r/databricks" />
