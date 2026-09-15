@@ -57,6 +57,7 @@ def load_digests(slug: str, limit: int) -> list[dict]:
         else:
             headline, body = f"Digest for {day.name}", text
         entries.append({
+            "slug": slug,
             "date": day.name,
             "headline": headline,
             "html": markdown.markdown(body, extensions=["extra", "sane_lists"]),
@@ -89,9 +90,10 @@ def write_rss(path: Path, domain: dict, entries: list[dict], base: str) -> None:
     ET.SubElement(channel, f"{{{ATOM}}}link", href=feed_url, rel="self", type="application/rss+xml")
     for entry in entries:
         item = ET.SubElement(channel, "item")
-        ET.SubElement(item, "title").text = f"{entry['date']} · {entry['headline']}"
-        ET.SubElement(item, "link").text = f"{base}/digests/{entry['date']}/{domain['slug']}.html"
-        ET.SubElement(item, "guid", isPermaLink="false").text = f"datanews-{domain['slug']}-{entry['date']}"
+        label = f" · {entry['label']}" if entry.get("label") else ""
+        ET.SubElement(item, "title").text = f"{entry['date']}{label} · {entry['headline']}"
+        ET.SubElement(item, "link").text = f"{base}/digests/{entry['date']}/{entry['slug']}.html"
+        ET.SubElement(item, "guid", isPermaLink="false").text = f"datanews-{entry['slug']}-{entry['date']}"
         ET.SubElement(item, "pubDate").text = pub_date(entry["date"])
         ET.SubElement(item, "description").text = entry["html"]
     tree = ET.ElementTree(rss)
@@ -139,11 +141,17 @@ def main() -> None:
     domains = load_sources()["domains"]
     index_sections = []
 
+    entries_by_slug = {d["slug"]: load_digests(d["slug"], args.limit) for d in [ALL_DOMAINS, *domains]}
+    # The all-domains feed carries the cross-domain overview plus every full domain digest.
+    combined = [dict(e, label="Top 5") for e in entries_by_slug["all"]]
+    combined += [dict(e, label=d["title"]) for d in domains for e in entries_by_slug[d["slug"]]]
+    combined.sort(key=lambda e: e["date"], reverse=True)
+
     for domain in [ALL_DOMAINS, *domains]:
         slug = domain["slug"]
-        entries = load_digests(slug, args.limit)
+        entries = entries_by_slug[slug]
         feed_url = f"{base}/feeds/{slug}.xml"
-        write_rss(out / "feeds" / f"{slug}.xml", domain, entries, base)
+        write_rss(out / "feeds" / f"{slug}.xml", domain, combined if slug == "all" else entries, base)
         for entry in entries:
             page = (f'<p class="meta"><a href="../../index.html">datanews</a> · {html.escape(domain["title"])} · {entry["date"]}</p>'
                     f"<h1>{html.escape(entry['headline'])}</h1>{entry['html']}")
