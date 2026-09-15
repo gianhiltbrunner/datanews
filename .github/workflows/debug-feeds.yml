@@ -1,0 +1,31 @@
+name: Debug feed access (temporary)
+
+on:
+  workflow_dispatch:
+
+jobs:
+  probe:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Probe feeds with different User-Agents
+        run: |
+          uas=(
+            "Mozilla/5.0 (compatible; datanews-bot/1.0; +https://github.com/)"
+            "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/126.0 Safari/537.36"
+            "Feedly/1.0 (+http://www.feedly.com/fetcher.html; like FeedFetcher-Google)"
+            "NetNewsWire (RSS Reader; https://netnewswire.com/)"
+            "curl/8.5.0"
+          )
+          urls=(
+            "https://seattledataguy.substack.com/feed"
+            "https://benn.substack.com/feed"
+            "https://www.reddit.com/r/dataengineering/top/.rss?t=day"
+            "https://old.reddit.com/r/dataengineering/top/.rss?t=day"
+          )
+          for u in "${urls[@]}"; do
+            echo "== $u"
+            for ua in "${uas[@]}"; do
+              code=$(curl -s -o /dev/null -m 20 -A "$ua" -w "%{http_code}" "$u")
+              echo "  $code  $ua"
+            done
+          done
