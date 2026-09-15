@@ -24,7 +24,7 @@ RETRYABLE = {429, 500, 502, 503, 504}
 # Substack's bot protection blocks cloud IPs (e.g. GitHub runners); rss2json fetches on our behalf.
 RSS2JSON = "https://api.rss2json.com/v1/api.json?rss_url="
 # Hosts that rate-limit bursts: minimum seconds between requests.
-HOST_SPACING = {"www.reddit.com": 8.0, "hnrss.org": 2.0, "api.rss2json.com": 3.0}
+HOST_SPACING = {"www.reddit.com": 8.0, "hnrss.org": 5.0, "api.rss2json.com": 3.0, "news.google.com": 2.0}
 _host_locks = {host: threading.Lock() for host in HOST_SPACING}
 _host_last: dict[str, float] = {}
 

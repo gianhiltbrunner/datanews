@@ -16,6 +16,8 @@ from common import ROOT, fetch_entries, load_sources
 TAG_RE = re.compile(r"<[^>]+>")
 WS_RE = re.compile(r"\s+")
 TRACKING_PARAMS = {"ref", "ref_src", "source", "publication_id", "post_id"}
+# Per-type item caps; release feeds can emit many patch/provider releases a day.
+TYPE_CAPS = {"release": 3, "news": 25}
 
 
 def clean_text(value: str, limit: int) -> str:
@@ -68,11 +70,16 @@ def main() -> None:
 
     sources = load_sources()
     now = datetime.now(timezone.utc)
-    cutoff = now - timedelta(hours=args.hours)
     jobs = [(domain, feed) for domain in sources["domains"] for feed in domain["feeds"]]
 
-    with ThreadPoolExecutor(max_workers=6) as pool:
-        results = list(pool.map(lambda job: fetch_feed(job[1], cutoff, args.per_feed), jobs))
+    def run(job: tuple[dict, dict]) -> tuple[list[dict], str | None]:
+        domain, feed = job
+        cutoff = now - timedelta(hours=domain.get("window_hours", args.hours))
+        cap = feed.get("max_items", TYPE_CAPS.get(feed["type"], args.per_feed))
+        return fetch_feed(feed, cutoff, cap)
+
+    with ThreadPoolExecutor(max_workers=8) as pool:
+        results = list(pool.map(run, jobs))
 
     out = ROOT / args.out  # an absolute --out replaces ROOT
     out.mkdir(parents=True, exist_ok=True)
@@ -96,7 +103,7 @@ def main() -> None:
             "domain": domain["slug"],
             "title": domain["title"],
             "focus": domain["focus"],
-            "window_hours": args.hours,
+            "window_hours": domain.get("window_hours", args.hours),
             "generated_at": now.isoformat(),
             "item_count": len(items),
             "items": items,

@@ -1,5 +1,6 @@
 # datanews sources — one entry per domain; each domain becomes an OPML folder.
-# type: substack | bluesky | blog | reddit | hackernews
+# type: substack | bluesky | blog | reddit | hackernews | community | news | release
+# Optional: window_hours per domain (look-back, default 26), max_items per feed.
 # Bluesky profile feeds: https://bsky.app/profile/<handle>/rss
 # Run `python scripts/validate_sources.py` after editing.
 domains:
@@ -39,6 +40,10 @@ domains:
     url: https://rmoff.net/index.xml
     site: https://rmoff.net
     type: blog
+  - title: InfoQ — AI, ML & Data Engineering
+    url: https://feed.infoq.com/ai-ml-data-eng/
+    site: https://www.infoq.com/ai-ml-data-eng/
+    type: blog
   - title: DuckDB Blog
     url: https://duckdb.org/feed.xml
     site: https://duckdb.org/news
@@ -59,21 +64,33 @@ domains:
     url: https://netflixtechblog.com/feed
     site: https://netflixtechblog.com
     type: blog
+  - title: Google News — data engineering
+    url: https://news.google.com/rss/search?q=%22data+engineering%22+when:1d&hl=en-US&gl=US&ceid=US:en
+    site: https://news.google.com
+    type: news
+  - title: Medium — #data-engineering
+    url: https://medium.com/feed/tag/data-engineering
+    site: https://medium.com/tag/data-engineering
+    type: community
+  - title: DEV — #dataengineering
+    url: https://dev.to/feed/tag/dataengineering
+    site: https://dev.to/t/dataengineering
+    type: community
   - title: r/dataengineering (top today)
     url: https://www.reddit.com/r/dataengineering/top/.rss?t=day
     site: https://www.reddit.com/r/dataengineering
     type: reddit
   - title: Hacker News — data engineering
-    url: https://hnrss.org/newest?q=%22data+engineering%22&points=10
+    url: https://hnrss.org/newest?q=%22data+engineering%22
+    site: https://news.ycombinator.com
+    type: hackernews
+  - title: Hacker News — DuckDB
+    url: https://hnrss.org/newest?q=duckdb
     site: https://news.ycombinator.com
     type: hackernews
   - title: Robin Moffatt (Bluesky)
     url: https://bsky.app/profile/rmoff.net/rss
     site: https://bsky.app/profile/rmoff.net
-    type: bluesky
-  - title: Joe Reis (Bluesky)
-    url: https://bsky.app/profile/joereis.bsky.social/rss
-    site: https://bsky.app/profile/joereis.bsky.social
     type: bluesky
   - title: Gunnar Morling (Bluesky)
     url: https://bsky.app/profile/gunnarmorling.dev/rss
@@ -83,10 +100,6 @@ domains:
     url: https://bsky.app/profile/hannes.muehleisen.org/rss
     site: https://bsky.app/profile/hannes.muehleisen.org
     type: bluesky
-  - title: Seattle Data Guy (Bluesky)
-    url: https://bsky.app/profile/seattledataguy.bsky.social/rss
-    site: https://bsky.app/profile/seattledataguy.bsky.social
-    type: bluesky
   - title: DuckDB (Bluesky)
     url: https://bsky.app/profile/duckdb.org/rss
     site: https://bsky.app/profile/duckdb.org
@@ -95,10 +108,35 @@ domains:
     url: https://bsky.app/profile/motherduck.com/rss
     site: https://bsky.app/profile/motherduck.com
     type: bluesky
+  - title: Apache Airflow releases
+    url: https://github.com/apache/airflow/releases.atom
+    site: https://github.com/apache/airflow/releases
+    type: release
+  - title: Dagster releases
+    url: https://github.com/dagster-io/dagster/releases.atom
+    site: https://github.com/dagster-io/dagster/releases
+    type: release
+  - title: DuckDB releases
+    url: https://github.com/duckdb/duckdb/releases.atom
+    site: https://github.com/duckdb/duckdb/releases
+    type: release
+  - title: Polars releases
+    url: https://github.com/pola-rs/polars/releases.atom
+    site: https://github.com/pola-rs/polars/releases
+    type: release
+  - title: dlt releases
+    url: https://github.com/dlt-hub/dlt/releases.atom
+    site: https://github.com/dlt-hub/dlt/releases
+    type: release
+  - title: Apache DataFusion releases
+    url: https://github.com/apache/datafusion/releases.atom
+    site: https://github.com/apache/datafusion/releases
+    type: release
 
 - slug: analytics-engineering
   title: Analytics Engineering
   focus: dbt and SQL transformation, semantic layers, metrics, BI and data modelling, data quality and testing, analytics workflows
+  window_hours: 72
   feeds:
   - title: The Analytics Engineering Roundup (dbt Labs)
     url: https://roundup.getdbt.com/feed
@@ -128,14 +166,22 @@ domains:
     url: https://madisonmae.substack.com/feed
     site: https://madisonmae.substack.com
     type: substack
-  - title: Sarah's Newsletter (Sarah Krasnik)
-    url: https://sarahsnewsletter.substack.com/feed
-    site: https://sarahsnewsletter.substack.com
-    type: substack
   - title: Engineering Data (Stephen Bailey)
     url: https://stkbailey.substack.com/feed
     site: https://stkbailey.substack.com
     type: substack
+  - title: Google News — dbt Labs / semantic layer
+    url: https://news.google.com/rss/search?q=%22dbt+Labs%22+OR+%22semantic+layer%22+OR+%22analytics+engineering%22+when:3d&hl=en-US&gl=US&ceid=US:en
+    site: https://news.google.com
+    type: news
+  - title: Medium — #dbt
+    url: https://medium.com/feed/tag/dbt
+    site: https://medium.com/tag/dbt
+    type: community
+  - title: Medium — #analytics-engineering
+    url: https://medium.com/feed/tag/analytics-engineering
+    site: https://medium.com/tag/analytics-engineering
+    type: community
   - title: r/analyticsengineering (top today)
     url: https://www.reddit.com/r/analyticsengineering/top/.rss?t=day
     site: https://www.reddit.com/r/analyticsengineering
@@ -145,26 +191,42 @@ domains:
     site: https://www.reddit.com/r/DataBuildTool
     type: reddit
   - title: Hacker News — dbt
-    url: https://hnrss.org/newest?q=dbt&points=5
+    url: https://hnrss.org/newest?q=dbt
     site: https://news.ycombinator.com
     type: hackernews
-  - title: Benn Stancil (Bluesky)
-    url: https://bsky.app/profile/benn.bsky.social/rss
-    site: https://bsky.app/profile/benn.bsky.social
-    type: bluesky
   - title: dbt Labs (Bluesky)
     url: https://bsky.app/profile/getdbt.com/rss
     site: https://bsky.app/profile/getdbt.com
     type: bluesky
+  - title: dbt-core releases
+    url: https://github.com/dbt-labs/dbt-core/releases.atom
+    site: https://github.com/dbt-labs/dbt-core/releases
+    type: release
+  - title: SQLMesh releases
+    url: https://github.com/TobikoData/sqlmesh/releases.atom
+    site: https://github.com/TobikoData/sqlmesh/releases
+    type: release
+  - title: SQLGlot releases
+    url: https://github.com/tobymao/sqlglot/releases.atom
+    site: https://github.com/tobymao/sqlglot/releases
+    type: release
+  - title: Cube releases
+    url: https://github.com/cube-js/cube/releases.atom
+    site: https://github.com/cube-js/cube/releases
+    type: release
+  - title: Lightdash releases
+    url: https://github.com/lightdash/lightdash/releases.atom
+    site: https://github.com/lightdash/lightdash/releases
+    type: release
+  - title: Great Expectations releases
+    url: https://github.com/great-expectations/great_expectations/releases.atom
+    site: https://github.com/great-expectations/great_expectations/releases
+    type: release
 
 - slug: data-platform-engineering
   title: Data Platform Engineering
   focus: data infrastructure and platform teams, warehouses and lakehouses, catalogs and governance, data contracts and data products, cost, reliability, cloud data services
   feeds:
-  - title: Data Products (Chad Sanderson)
-    url: https://dataproducts.substack.com/feed
-    site: https://dataproducts.substack.com
-    type: substack
   - title: Modern Data 101
     url: https://moderndata101.substack.com/feed
     site: https://moderndata101.substack.com
@@ -181,9 +243,17 @@ domains:
     url: https://www.databricks.com/feed
     site: https://www.databricks.com/blog
     type: blog
+  - title: Snowflake Blog
+    url: https://www.snowflake.com/feed/
+    site: https://www.snowflake.com/en/blog/
+    type: blog
   - title: Snowflake Engineering (Medium)
     url: https://medium.com/feed/snowflake
     site: https://medium.com/snowflake
+    type: blog
+  - title: ClickHouse Blog
+    url: https://clickhouse.com/rss.xml
+    site: https://clickhouse.com/blog
     type: blog
   - title: Airbnb Engineering
     url: https://medium.com/feed/airbnb-engineering
@@ -193,6 +263,14 @@ domains:
     url: https://engineering.atspotify.com/feed/
     site: https://engineering.atspotify.com
     type: blog
+  - title: Google News — Databricks / Snowflake
+    url: https://news.google.com/rss/search?q=Databricks+OR+Snowflake+when:1d&hl=en-US&gl=US&ceid=US:en
+    site: https://news.google.com
+    type: news
+  - title: Medium — #data-platform
+    url: https://medium.com/feed/tag/data-platform
+    site: https://medium.com/tag/data-platform
+    type: community
   - title: r/databricks (top today)
     url: https://www.reddit.com/r/databricks/top/.rss?t=day
     site: https://www.reddit.com/r/databricks
@@ -201,11 +279,35 @@ domains:
     url: https://www.reddit.com/r/snowflake/top/.rss?t=day
     site: https://www.reddit.com/r/snowflake
     type: reddit
-  - title: Hacker News — lakehouse
-    url: https://hnrss.org/newest?q=lakehouse&points=5
+  - title: Hacker News — lakehouse / Iceberg
+    url: https://hnrss.org/newest?q=iceberg+lakehouse
     site: https://news.ycombinator.com
     type: hackernews
   - title: Simon Willison (Bluesky)
     url: https://bsky.app/profile/simonwillison.net/rss
     site: https://bsky.app/profile/simonwillison.net
     type: bluesky
+  - title: Apache Iceberg releases
+    url: https://github.com/apache/iceberg/releases.atom
+    site: https://github.com/apache/iceberg/releases
+    type: release
+  - title: Delta Lake releases
+    url: https://github.com/delta-io/delta/releases.atom
+    site: https://github.com/delta-io/delta/releases
+    type: release
+  - title: Trino releases
+    url: https://github.com/trinodb/trino/releases.atom
+    site: https://github.com/trinodb/trino/releases
+    type: release
+  - title: ClickHouse releases
+    url: https://github.com/ClickHouse/ClickHouse/releases.atom
+    site: https://github.com/ClickHouse/ClickHouse/releases
+    type: release
+  - title: DataHub releases
+    url: https://github.com/datahub-project/datahub/releases.atom
+    site: https://github.com/datahub-project/datahub/releases
+    type: release
+  - title: OpenMetadata releases
+    url: https://github.com/open-metadata/OpenMetadata/releases.atom
+    site: https://github.com/open-metadata/OpenMetadata/releases
+    type: release

@@ -52,8 +52,15 @@ Add an entry under the right domain in `sources.yaml`:
   - title: Someone (Bluesky)
     url: https://bsky.app/profile/<handle>/rss   # Substack: https://<name>.substack.com/feed
     site: https://bsky.app/profile/<handle>
-    type: bluesky                                # substack | bluesky | blog | reddit | hackernews
+    type: bluesky                                # substack | bluesky | blog | reddit | hackernews | community | news | release
 ```
+
+- **Extra source types:**
+  - `release`: GitHub release feeds such as `https://github.com/<org>/<repo>/releases.atom`. Capped at 3 items per feed.
+  - `news`: Google News search RSS. Put `when:1d` in the query to limit it to recent items.
+  - `community`: Medium and DEV tag feeds.
+- **Per-feed cap:** add `max_items: N` to a feed to override its cap.
+- **Look-back window:** add `window_hours: 72` to a domain whose sources publish rarely. Analytics Engineering uses this.
 
 Then check that it works:
 

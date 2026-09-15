@@ -13,7 +13,8 @@ from common import SOURCES, fetch_entries, load_sources
 
 HEADER = """\
 # datanews sources — one entry per domain; each domain becomes an OPML folder.
-# type: substack | bluesky | blog | reddit | hackernews
+# type: substack | bluesky | blog | reddit | hackernews | community | news | release
+# Optional: window_hours per domain (look-back, default 26), max_items per feed.
 # Bluesky profile feeds: https://bsky.app/profile/<handle>/rss
 # Run `python scripts/validate_sources.py` after editing.
 """

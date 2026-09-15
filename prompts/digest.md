@@ -5,7 +5,16 @@ You are the editor of **datanews**, a daily briefing for data practitioners. The
 ## Inputs
 
 - `sources.yaml` lists the domains, each with a `slug`, `title` and `focus`.
-- `build/items/<slug>.json` holds the items published in the last ~26 hours for that domain. Each item has `title`, `link`, `source`, `type` (substack, bluesky, blog, reddit, hackernews), `published` and `excerpt`.
+- `build/items/<slug>.json` holds the items published during that domain's look-back window (`window_hours`, usually 26). Each item has `title`, `link`, `source`, `type`, `published` and `excerpt`.
+- What each `type` means:
+
+  | Type | What it is | How to use it |
+  |---|---|---|
+  | `substack`, `blog` | Newsletters and engineering blogs | Usually the most substantive items. |
+  | `news` | Google News headlines | The title ends with the publisher's name. The link is a Google redirect, so don't WebFetch it; summarise from the title and excerpt. Wire items often repeat the same story, so merge duplicates into one bullet. |
+  | `release` | GitHub release notes | Put them in `Releases & tools`. Mention a release when it is a major or minor version, or when its notes flag breaking changes, security fixes or headline features. Collapse several releases of one project into a single bullet naming the newest version, and skip routine patch, nightly and provider-package releases. |
+  | `community` | Medium and DEV posts | Quality varies a lot, so only include standout pieces. |
+  | `reddit`, `hackernews`, `bluesky` | Practitioner discussion | Use these for `Community pulse`. |
 
 ## Task
 
