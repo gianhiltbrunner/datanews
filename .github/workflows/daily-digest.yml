@@ -120,7 +120,12 @@ jobs:
         run: python scripts/build_site.py
 
       - name: Commit digests
+        env:
+          GITHUB_TOKEN: ${{ github.token }}
         run: |
+          # claude-code-action swaps in its own short-lived git credentials; restore the workflow token.
+          git config --local --unset-all http.https://github.com/.extraheader || true
+          git remote set-url origin "https://x-access-token:${GITHUB_TOKEN}@github.com/${GITHUB_REPOSITORY}.git"
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
           git add digests datanews.opml
@@ -128,7 +133,8 @@ jobs:
             echo "Nothing to commit"
           else
             git commit -m "digest: $DATE"
-            git push
+            git pull --rebase origin main
+            git push origin HEAD:main
           fi
 
       - uses: actions/upload-pages-artifact@v3

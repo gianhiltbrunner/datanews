@@ -37,13 +37,18 @@ def main() -> None:
     with ThreadPoolExecutor(max_workers=4) as pool:
         results = list(pool.map(lambda job: check(job[1]), jobs))
 
-    dead = []
+    dead, limited = [], 0
     for (domain, feed), (ok, detail) in zip(jobs, results):
-        print(f"{'OK  ' if ok else 'DEAD'}  {domain['slug']:<26} {feed['title']:<48} {detail}")
-        if not ok:
+        # 429 means the host is throttling us (common from shared CI IPs), not that the feed is gone.
+        rate_limited = not ok and "429" in detail
+        label = "OK  " if ok else "WAIT" if rate_limited else "DEAD"
+        print(f"{label}  {domain['slug']:<26} {feed['title']:<48} {detail}")
+        if rate_limited:
+            limited += 1
+        elif not ok:
             dead.append((domain, feed, detail))
 
-    print(f"\n{len(jobs) - len(dead)}/{len(jobs)} feeds OK")
+    print(f"\n{len(jobs) - len(dead) - limited}/{len(jobs)} feeds OK, {limited} rate-limited, {len(dead)} dead")
 
     if args.report and dead:
         lines = ["The weekly source check found feeds that failed:", "", "| Domain | Feed | Result |", "|---|---|---|"]
