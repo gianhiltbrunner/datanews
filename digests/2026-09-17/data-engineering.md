@@ -1,0 +1,20 @@
+# Dropbox rebuilds its content platform for AI as the orchestrator debate reignites
+
+Dropbox detailed how its Riviera content-processing platform now underpins AI and RAG workflows, and a widely discussed post used July's Prefect–Dagster Labs deal and Kestra's 2.0 rewrite to argue orchestrator choice is an operating-model decision, not a checklist. Astronomer's 5,818-respondent Airflow survey offered a rare large-sample read on what's really running in production, while the rest of the feeds were dominated by beginner Medium tutorials and Adidas layoff wire stories.
+
+## Top stories
+- **[Dropbox Evolves Riviera Content Processing Platform to Support AI Workloads](https://www.infoq.com/news/2026/09/dropbox-riviera-ai-platform/?utm_campaign=infoq_content&utm_source=infoq&utm_medium=feed&utm_term=AI%2C+ML+%26+Data+Engineering)** — InfoQ. Dropbox evolved Riviera from a file preview service into a universal content platform covering 300+ file formats and 100+ transformations, processing hundreds of thousands of transformations per second and exposing async extraction APIs for AI and RAG use cases. *Why it matters:* it's a concrete look at retrofitting a mature content pipeline for AI workloads instead of building a parallel one.
+- **[Your Orchestrator Is an Operating Model, Not a Feature List](https://dev.to/sudeephazra/your-orchestrator-is-an-operating-model-not-a-feature-list-51mf)** — DEV. Using July's Prefect acquisition of Dagster Labs and Kestra's September 2.0 rewrite (separate control/data planes, remote workers, agent-callable flows) as anchors, the piece argues the "which orchestrator" debate should turn on operating model fit, not feature comparison. *Why it matters:* orchestrator consolidation is actively reshaping the vendor landscape this year.
+- **[5,800 Data Engineers on What Is Actually in Production in 2026](https://dev.to/datadriven/5800-data-engineers-on-what-is-actually-in-production-in-2026-1570)** — DEV. A read-through of Astronomer's State of Apache Airflow 2026 survey, 5,818 respondents across 122 countries, on what tools are actually deployed versus what candidates prep for in interviews. *Why it matters:* a sample size large enough to be worth more than the usual 200-respondent "state of" reports.
+
+## Releases & tools
+- **[Dagster 1.13.23](https://github.com/dagster-io/dagster/releases/tag/1.13.23)** — Dagster+ alert policies can now target queued/in-progress run counts over a rolling window, Serverless fast deploys can build Docker images instead of Python executables, and component files now accept `.yml` alongside `.yaml`.
+- **[DuckDB Skills for Claude Code](https://bsky.app/profile/duckdb.org/post/3mvoa76j54s2g)** — DuckDB. The new `duckdb-skills` plugin gives Claude Code CLI-backed skills for reading data files, running queries, converting formats and exploring object storage with DuckDB.
+
+## Worth reading
+- **[The scraper said 'Succeeded'. The column was dead for weeks.](https://dev.to/tactful_anvil/the-scraper-said-succeeded-the-column-was-dead-for-weeks-38ec)** — a first-hand account of a silent failure class: row counts and schema checks all pass while a numeric column quietly reads zero after an upstream API change.
+- **[The Future of Data Engineering in the Age of AI](https://dataengineeringcentral.substack.com/p/the-future-of-data-engineering-in)** — an interview on the growing overlap between data and AI engineering, and why strong fundamentals matter more as AI makes writing code cheaper.
+
+## Community pulse
+- On r/dataengineering, [a thread on the most "WTF" thing seen at a company](https://www.reddit.com/r/dataengineering/comments/1wid3j2/what_is_the_most_wtf_thing_youve_seen_at_a_company/) turned into a venting session about inherited tooling, with "Airtable for ETL" as an early frontrunner.
+- On Hacker News, [an experiment running Magento analytics through DuckDB against the same transactional MariaDB instance](https://mariadb.org/trying-duckdb-for-magento-analytics-an-experiment-with-one-million-orders/) benchmarked query performance against a million-order dataset.
