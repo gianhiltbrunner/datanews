@@ -1,0 +1,10 @@
+# ClickHouse cuts Fountain's analytics latency from three hours to two minutes
+
+Wire noise ran heavy today — Snowflake insider-trading filings, keyword-matched non-stories, and reposts of the day's AI model launches crowded out real signal across all three domains. What broke through were concrete practitioner accounts: a production migration with hard latency and cost numbers, a silent CDC failure mode, a major agent-access GA launch, and a dbt Summit roundup sorting real features from roadmap talk.
+
+## Top 5 across domains
+- **[Data Platform Engineering]** **[How Fountain rebuilt its data plane on ClickHouse Cloud to power Cue, the Frontline Superintelligence](https://clickhouse.com/blog/fountain-agentic-ai-for-high-volume-hiring)** — cut analytics latency from three hours to under two minutes and costs by 66%.
+- **[Data Platform Engineering]** **[The Genie One MCP is now Generally Available](https://www.databricks.com/blog/genie-one-mcp-now-generally-available)** — Databricks' governed, single-integration-point MCP server for AI agents to query structured and unstructured data.
+- **[Data Engineering]** **[We found a nasty Debezium + PostgreSQL failover edge case that can silently create gaps in CDC](https://www.reddit.com/r/dataengineering/comments/1wnc2ee/we_found_a_nasty_debezium_postgresql_failover/)** — a replication slot can start ahead of Kafka Connect's stored offset after failover, dropping change events with no visible error.
+- **[Analytics Engineering]** **[6 Things From dbt Summit 2026 That Actually Matter — And Which Ones You Can Use Today](https://medium.com/@karthikrajashekaran/6-things-from-dbt-summit-2026-that-actually-matter-and-which-ones-you-can-use-today-5b327f89a82b)** — sorts the summit's announcements into two GA features, three in beta, and one still waitlist-only.
+- **[Data Engineering]** **[We nearly charged our own buyers twice for rows they'd already paid for](https://dev.to/fetchsmith/we-nearly-charged-our-own-buyers-twice-for-rows-theyd-already-paid-for-1pde)** — a capped delivered-id cache silently re-delivered, and re-billed, rows once a source's backlog outgrew it.
