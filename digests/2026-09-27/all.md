@@ -1,0 +1,10 @@
+# Databricks buys spreadsheet startup Row Zero for its Genie AI agent
+
+A quiet day across all three domains, with Google News searches surfacing far more off-topic noise than genuine data stories. The clearest throughline was Databricks' acquisition of Row Zero to add spreadsheet interaction to its Genie AI agent, alongside practical guidance on migrating to the new dbt Core v2 and a lightweight DuckDB-based alternative to dbt itself.
+
+## Top 5 across domains
+- **[Data Platform Engineering]** Databricks acquired spreadsheet startup Row Zero, folding spreadsheet-native interaction into its Genie AI agent as part of a broader agentic AI push ([Business Chief](https://news.google.com/rss/articles/CBMikgFBVV95cUxQV0w5bjIwcXpiMGxSaHVWdWdKX2lDaWNnQ1pmX0lIbXc3ZnUzTmlDZ0NkbG0tZ3k4WUFGSTZ0NlBkVUVZSUdtbC13QWVxN2xfbG94RGJYMUV6aXN5V0M0OGdUcHNNMWZEUEVxZV9UUGhOamFrQU5Zb0QzVW9NMEpzZEYwY3dtMFpYdnQwVlk3UVFQUQ?oc=5)).
+- **[Analytics Engineering]** A practical guide walks teams through migrating existing Snowflake dbt Core v1 projects to the new Rust-based dbt v2 ([Snowflake Builders Blog](https://medium.com/snowflake/from-dbt-core-v1-to-dbt-v2-on-snowflake-a-practical-migration-guide-4eb137573a1f?source=rss------dbt-5)).
+- **[Data Engineering]** A ~250-line tool uses DuckDB's own SQL-to-AST parser to replicate dbt-style dependency resolution with just DuckDB and Make ([Show HN](https://github.com/ltrgoddard/duckdb.mk)).
+- **[Data Engineering]** Google's GKE Pod Snapshot benchmarks show up to 89% faster startup latency and a 70B-parameter model loading in 37 seconds ([InfoQ](https://www.infoq.com/news/2026/09/gke-pod-snapshots-benchmarks/?utm_campaign=infoq_content&utm_source=infoq&utm_medium=feed&utm_term=AI%2C+ML+%26+Data+Engineering)).
+- **[Data Platform Engineering]** Snowflake practitioners debated how to tell a warehouse-sizing problem from a query-design problem before scaling up compute ([r/snowflake](https://www.reddit.com/r/snowflake/comments/1wqptna/whats_your_process_for_deciding_when_a_query/)).
