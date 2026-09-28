@@ -1,0 +1,16 @@
+# Great Expectations patches a SQLAlchemy 2.1 break as GovCloud and semantic-routing war stories surface
+
+Most of the window was personal-blog volume of uneven quality, but a few practitioner write-ups stood out: a Snowflake-to-GovCloud migration post-mortem, a semantic layer built to route only relevant schema to a text-to-SQL model, and a walkthrough of dbt materialization trade-offs. On the tooling side, Great Expectations shipped a compatibility fix for a SQLAlchemy 2.1 regression that broke several warehouse integrations.
+
+## Top stories
+- **[What Nobody Tells You About Moving Snowflake to GovCloud](https://medium.com/@kausik.kb.bhowmik/what-nobody-tells-you-about-moving-snowflake-to-govcloud-0dca8cc9d68e?source=rss------analytics_engineering-5)** — Medium. A first-hand account of what changed and what broke when an account moved into a government cloud region, arguing the migration plan matters more than the replication mechanics. *Why it matters:* a rare real-world account of the operational gotchas in a move most teams only plan for in the abstract.
+- **[Semantic Layer Routing: Giving the Model Only What the Question Needs](https://medium.com/@moradabaz/semantic-layer-routing-giving-the-model-only-what-the-question-needs-d2b16ccc8d3a?source=rss------dbt-5)** — Medium. Describes a "Schema Routing Engine" that narrows a semantic layer down to only the tables and metrics relevant to a given question before handing it to a text-to-SQL model, based on lessons from testing it. *Why it matters:* a concrete pattern for making semantic layers usable as grounding for LLM-driven analytics.
+- **[Demystifying dbt Materializations: The Definitive Guide to your Data Platform Cost, Speed and Scale](https://medium.com/towards-data-engineering/demystifying-dbt-materializations-the-definitive-guide-to-your-data-platform-cost-speed-and-scale-220fbcf6dfc3?source=rss------dbt-5)** — Medium. Walks through choosing between dbt's materialization types as a warehouse-compute and cost decision rather than a purely stylistic one.
+
+## Releases & tools
+- **[Great Expectations 1.23.2](https://github.com/fivetran/great_expectations/releases/tag/1.23.2)** — fixes GX on SQLAlchemy 2.1, which broke imports and queries against Snowflake, Databricks, driverless Postgres, BigQuery and SQL Server backends on Python 3.11+; also pins `sqlalchemy<2.1` for the affected extras.
+- **[SQLGlot v30.20.0](https://github.com/tobymao/sqlglot/releases/tag/v30.20.0)** — a breaking change to how the optimizer annotates DuckDB's `bit_and`/`bitand` functions.
+
+## Worth reading
+- **[Prefect on a Small Budget with Enterprise Security Constraints](https://drogaieva.medium.com/prefect-on-a-small-budget-with-enterprise-security-constraints-0a5c8ff5ff26?source=rss------dbt-5)** — Medium. Notes on running Prefect orchestration under tight budget and security limits, alongside dbt as the transformation layer.
+- **[Why did I Put a Hand-Written 3NF Layer Between Raw JSON and My Star Schema](https://medium.com/@maioelom/why-did-i-put-a-hand-written-3nf-layer-between-raw-json-and-my-star-schema-b2feeeef115c?source=rss------dbt-5)** — Medium. First part of a series building a dimensional model from a public API, arguing for a normalized staging layer before the star schema.

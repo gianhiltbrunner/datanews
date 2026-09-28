@@ -1,0 +1,15 @@
+# AWS adds foreign keys to Aurora DSQL, and Fabric Runtime 2.0 becomes the default
+
+A quiet day for original data engineering writing, with the signal buried under SEO posts and recycled wire stories. The clearest news is AWS closing a long-standing gap in Aurora DSQL, a practitioner's migration checklist for Fabric Runtime 2.0, and a data-engineering newsletter roundup covering streaming-completeness and data-agent work at Pinterest, DoorDash and others.
+
+## Top stories
+- **[AWS Introduces Foreign Key Constraints in Aurora DSQL](https://www.infoq.com/news/2026/09/aurora-dsql-foreign-keys/?utm_campaign=infoq_content&utm_source=infoq&utm_medium=feed&utm_term=AI%2C+ML+%26+Data+Engineering)** — InfoQ. Aurora DSQL now supports foreign key constraints with CASCADE, SET NULL and other referential actions, closing a gap users had flagged as an adoption blocker. *Why it matters:* removes one of the main reasons teams held off putting DSQL in front of relational workloads.
+- **[Fabric Runtime 2.0 is becoming the default. Here is what actually breaks.](https://dev.to/firfircelik/fabric-runtime-20-is-becoming-the-default-here-is-what-actually-breaks-12i9)** — DEV. A Lead Data Engineer on Azure/Fabric/Databricks/Spark lays out a migration checklist for when Fabric Runtime 2.0 stops being opt-in for new workspaces and environment items, later this September. *Why it matters:* teams that don't pre-flight the migration will find the breakages in production instead of in testing.
+- **[Data Engineering Weekly #289](https://www.dataengineeringweekly.com/p/data-engineering-weekly-289)** — Data Engineering Weekly. This issue rounds up Pinterest's framework for marking streaming-data completeness via event-time statistics in Iceberg commits, DoorDash's internal "Vera" data agent for answering business questions across fragmented sources, and Uber's system for logging the features actually used in predictions to catch model drift. *Why it matters:* a cross-section of how large platform teams are hardening streaming and ML-adjacent data infrastructure right now.
+
+## Worth reading
+- **[Why Apache Iceberg Needs a Table Management Platform](https://dev.to/jonisar/why-apache-iceberg-needs-a-table-management-platform-1ckf)** — DEV. Argues Iceberg ships the maintenance primitives (`rewrite_data_files`, `expire_snapshots`, `remove_orphan_files`) but no one owns running them, so tables accumulate file fragmentation and orphaned storage costs by default.
+- **[This Year's Better Mousetrap: New Tech, Same Old Problems, and The Semantic Swamp](https://joereis.substack.com/p/this-years-better-mousetrap-new-tech)** — Joe Reis. A Big Data London keynote recap arguing each hype cycle — data warehousing, Hadoop, and now the current wave — repackages the same unresolved promise of making data useful.
+
+## Community pulse
+- A lead data engineer's Reddit post on using AI to build enterprise pipelines after "drinking the KoolAid" for 10 months sparked debate over whether the career still has a future in its current form ([r/dataengineering](https://www.reddit.com/r/dataengineering/comments/1ws4euv/thoughts_on_ai_in_de_after_drinking_the_koolaid/)).
