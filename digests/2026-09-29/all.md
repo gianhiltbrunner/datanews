@@ -1,0 +1,10 @@
+# Microsoft's FabCon Barcelona headlines a day dominated by platform announcements
+
+Data Platform Engineering carried the day's real news, led by Microsoft's FabCon/SQLCon Barcelona conference and ClickHouse landing native OneLake integration, plus a same-day Claude Sonnet 5.5 and GPT-6 rollout across AWS and Snowflake. Data Engineering and Analytics Engineering were thinner, but DuckDB's community shipped plain-English SQL filtering and a governance write-up flagged how AI agents can inherit excess access through shared roles.
+
+## Top 5 across domains
+- **[Data Platform Engineering]** **[Fabric September 2026 Feature Summary](https://community.fabric.microsoft.com/t5/Fabric-Updates-Blog/Fabric-September-2026-Feature-Summary/ba-p/5325825)** — Microsoft's biggest Fabric update yet, timed to FabCon/SQLCon Europe, spanning governance, CI/CD, AI experiences and the new Fabric Apps layer.
+- **[Data Platform Engineering]** **[ClickHouse expands collaboration with Microsoft](https://clickhouse.com/blog/clickhouse-expands-collaboration-with-microsoft)** — a native Fabric workload plus direct Iceberg writes to OneLake, letting ClickHouse query and write OneLake data without a separate export step.
+- **[Data Engineering]** **[Jev and DuckDB: Plain-English Conditions in SQL](https://duckdb.org/2026/09/29/jev.html)** — community extensions let you filter, classify and score DuckDB rows with plain-English conditions on top of a new typed-answer model.
+- **[Analytics Engineering]** **[One Shared Role Away From a Data Leak](https://npogeant.medium.com/one-shared-role-away-from-a-data-leak-22cc2925371b?source=rss------analytics_engineering-5)** — a case where an AI agent inherited more access than the person asking it did, because permissions lived on a shared role.
+- **[Data Platform Engineering]** **[Claude Sonnet 5.5 now available on AWS](https://aws.amazon.com/about-aws/whats-new/2026/09/claude-sonnet-5-5-aws/)** — Claude Sonnet 5.5 and GPT-6 Sol/Luna both landed on Snowflake Cortex AI the same day Sonnet 5.5 shipped on AWS and AWS GovCloud.
