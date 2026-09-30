@@ -1,0 +1,17 @@
+# Great Expectations patches a SQLAlchemy 2.1 break that hit every SQL backend
+
+The window's most actionable item was a compatibility fix: SQLAlchemy 2.1.0 broke Great Expectations across Snowflake, Databricks, Postgres, BigQuery and SQL Server, and 1.23.2 pins around it. Elsewhere, two essays looked at where AI meets the semantic layer — routing text-to-SQL questions to the right schema, and an agent inheriting more warehouse access than the person who asked it to run.
+
+## Top stories
+- **[Semantic Layer Routing: Giving the Model Only What the Question Needs](https://medium.com/@moradabaz/semantic-layer-routing-giving-the-model-only-what-the-question-needs-d2b16ccc8d3a)** — Medium. Argues reliable text-to-SQL agents need a schema routing engine in front of the semantic layer so the model only sees the tables relevant to a given question, and walks through what the author learned testing one. *Why it matters:* a concrete pattern for the schema-bloat problem that trips up most text-to-SQL attempts.
+- **[One Shared Role Away From a Data Leak](https://npogeant.medium.com/one-shared-role-away-from-a-data-leak-22cc2925371b)** — Medium. Describes a case where an AI agent inherited broader warehouse access than the person who asked it a question. *Why it matters:* a reminder that access-control gaps between users and the agents acting on their behalf are an emerging data-governance risk.
+
+## Releases & tools
+- **[1.23.2](https://github.com/fivetran/great_expectations/releases/tag/1.23.2)** — Great Expectations. Fixes breakage caused by SQLAlchemy 2.1.0 (released September 24) that broke `import great_expectations` with snowflake-sqlalchemy installed, failed every Databricks query, dropped driverless `postgresql://` URLs, broke BigQuery float comparisons and mis-reported SQL Server table case; pins compatibility to `sqlalchemy<2.1`.
+- **[2.386.0](https://github.com/lightdash/lightdash/releases/tag/2.386.0)** — Lightdash. The newest in a run of releases building out a "Documents" feature — tracking views and linking charts and Explores into documents alongside dashboards.
+- **[v1.7.47](https://github.com/cube-js/cube/releases/tag/v1.7.47)** — Cube. Bug fixes plus a behavior change: dev mode is now opt-in and no longer triggered automatically by `NODE_ENV`.
+
+## Worth reading
+- **[Introducing Paradime State (for dbt™ Fusion)](https://kaustav.medium.com/introducing-paradime-state-for-dbt-fusion-2dd16673a1cd)** — Medium. Paradime State brings state-aware orchestration to dbt Fusion runs, for both human and agent-triggered jobs, so only what changed since the last run actually executes.
+- **[From dbt Jobs to Enterprise Lineage: OpenLineage, Marquez and IBM watsonx.data Intelligence](https://medium.com/@alexander.seelert_41275/from-dbt-jobs-to-enterprise-lineage-openlineage-marquez-and-ibm-watsonx-data-intelligence-70267cff4960)** — Medium. Walks through loading data into Apache Iceberg, transforming it with dbt on IBM watsonx.data Presto, and emitting OpenLineage events to Marquez for enterprise-wide lineage.
+- **[Motley raises $1.5M pre-seed for agent-first semantic layer](https://news.google.com/rss/articles/CBMilwFBVV95cUxOTVdvQ2l1T2xVSmZ3aHdlOVBvdlBtVzVtaGoyd1FfQkdaY1ZsZDA5eUpOZjZEclVwQkZlZUdWRVRhcEN5QlFYYkxBSkRxOTR2NWlzaFJjanp5bGtoMGVtbFQtVFFjaXJEbzR0a2haMXFYb3BNN3NZWWdQeWFEb1g5QmFEbGJsMzIwWWxoWUxKTVNNbHlwdzdv?oc=5)** — Dealroom via Google News. A small but early signal of investor interest in purpose-built semantic layers for AI agents.
