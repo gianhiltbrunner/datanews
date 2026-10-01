@@ -1,0 +1,10 @@
+# Spanner Omni Reaches GA as DuckDB Confirms v2.0 Is Imminent
+
+Google Cloud's Spanner Omni went generally available as a deploy-anywhere, multi-model database, and DuckDB confirmed v2.0.0 will ship within weeks via a public preview. Elsewhere, AWS let Aurora PostgreSQL query Iceberg and Parquet lake files natively without ETL, and a widely discussed Medium post flagged how AI agents wired into analytics tooling can inherit more access than the humans using them.
+
+## Top 5 across domains
+- **[Data Platform Engineering]** [Spanner Omni, now GA](https://cloud.google.com/blog/products/databases/spanner-omni-deploy-anywhere-version-of-spanner-is-now-ga/) — Google Cloud's deploy-anywhere, multi-model version of Spanner reaches general availability for on-premises and other-cloud deployment.
+- **[Data Engineering]** [DuckDB v2.0.0 ships in a few weeks](https://bsky.app/profile/duckdb.org/post/3mws7kon4oc2p) — DuckDB published a v2.0.0-dev preview release ahead of the full version bump.
+- **[Data Platform Engineering]** [Aurora PostgreSQL now supports querying of Apache Iceberg and Parquet data](https://aws.amazon.com/about-aws/whats-new/2026/09/aurora-postgresql-query-apache-iceberg-and-parquet/) — Aurora can now query lakehouse data directly from PostgreSQL applications without building ETL pipelines.
+- **[Analytics Engineering]** [One Shared Role Away From a Data Leak](https://npogeant.medium.com/one-shared-role-away-from-a-data-leak-22cc2925371b?source=rss------analytics_engineering-5) — AI agents wired into analytics tooling through a shared service role can inherit broader access than the person asking the question.
+- **[Data Engineering]** [LinkedIn and Atlassian Cut Latency and Costs by Ditching JSON for Binary Formats](https://news.google.com/rss/articles/CBMirgFBVV95cUxNVnVGNzg1NWF0YmtSMkNUYTF6aHFwdlVxMEtLUlp1RWgtbUFOREVtZlBpNEs0VXNHZWRkaVVlckJoWlRuTlI5Y3FubE5rbElrQjQ4UzZzZDRkM1ZwazVoWEFJQXRYRTVNVE1MWUxJWUdnVW9XaHNCNzlMT01kU0ktUWI4MXBQTFVpLVpZUWpIZlV0VzdnWTJ1V2gtMHI3ZFZIcl91STBBMTlyRnVraXc?oc=5) — a wire report on two companies cutting pipeline latency and cost by replacing JSON with binary wire formats.
