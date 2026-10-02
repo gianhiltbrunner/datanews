@@ -1,0 +1,15 @@
+# A Practical Guide to Migrating from dbt Core v1 to dbt v2
+
+Paradime Labs published a practical migration guide for teams moving from dbt Core v1 to the Rust-based dbt v2, while Madison Schott weighed the real cost of vendor lock-in in the modern data stack. Cube quietly tightened its access-policy requirements in its latest release.
+
+## Top stories
+- **[How to migrate from dbt Core™ v1 to dbt™ v2?](https://medium.com/paradime-labs/how-to-migrate-from-dbt-core-v1-to-dbt-v2-4d8264c03440?source=rss------dbt-5)** — Medium (Paradime Labs). Walks through moving to dbt v2 ("Fusion"), the Rust rewrite that ships as a self-contained binary and connects via ADBC, covering what changes for existing dbt Core v1 projects. *Why it matters:* dbt v2 is now the current major version, and teams still on v1 need concrete migration guidance.
+- **[No More Vendor Lock-In](https://learnanalyticsengineering.substack.com/p/wth-is-open-data-infrastructure)** — Learn Analytics Engineering (Madison Schott). Argues that the appeal of a new tool rarely accounts for the hidden cost of later migrating away from it — researching alternatives, renegotiating contracts, backing up data and revalidating the transfer — and makes the case for open data infrastructure to avoid repeating that cycle. *Why it matters:* a timely counterpoint as teams weigh new tools against the switching costs already baked into their stack.
+- **[dbt Charts: What Happens When Dashboards Become Code](https://medium.com/@sendoamoronta/dbt-charts-what-happens-when-dashboards-become-code-6f39e691ad26?source=rss------dbt-5)** — Medium. Describes dbt Charts, which brings dashboard definitions into git, CI/CD, lineage and impact analysis the same way dbt already does for models. *Why it matters:* extends the "everything as code" pattern analytics engineers use for transformations to the BI layer itself.
+
+## Releases & tools
+- **[v1.7.48](https://github.com/cube-js/cube/releases/tag/v1.7.48)** — Cube now requires an explicit `includes` or `excludes` list in `accessPolicy` memberLevel, alongside fixes for date filters past 2262 and MSSQL boolean rendering.
+
+## Worth reading
+- **[MIN_BY and MAX_BY in Snowflake: One Line Instead of a Window Function](https://medium.com/@karthikrajashekaran/min-by-and-max-by-in-snowflake-one-line-instead-of-a-window-function-93fb96c5ba92?source=rss------analytics_engineering-5)** — shows how `MIN_BY`/`MAX_BY` replace the `QUALIFY ROW_NUMBER()` pattern for "value at the min/max of another column" queries, with caveats on null handling and arbitrary tie-breaking.
+- **[AI Made Data Scientists Faster. Now It's Expanding the Job.](https://news.google.com/rss/articles/CBMikgFBVV95cUxPZWpvdkpzX0l0d2RCNThMalJWYk9OY1ZrQkFoZjBYeklkV05vdkpVQjJwZnVWX0tQXzJ0M214b3pJaEhCM2U1Sk96d0lTUlBmT0JFd0FRX2ZwTUI1TVNmYWJQODhfOXFlSXpza0taRWx5MGJyOWN1WlVaVW95c0JlMHhkdllCQ1R2OGhjOGdpcm9Kdw?oc=5)** — Towards Data Science, via Google News. Argues AI tooling has sped up data scientists' work without shrinking the role, instead expanding what's expected of it.

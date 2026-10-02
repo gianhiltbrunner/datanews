@@ -1,0 +1,21 @@
+# Cloudflare Launches Basin, a Serverless Analytics Platform for Developers
+
+Cloudflare entered serverless analytics with the launch of Basin, while DuckDB published a reusable trick for speeding up string-heavy aggregations with dimension tables. Robin Moffatt's blunt post on the uneven burden of AI-generated work from colleagues drew notice, and practitioners kept debating home-grown platform frameworks and the early maturity of dbt 2.
+
+## Top stories
+- **[Cloudflare launches Basin for serverless analytics](https://news.google.com/rss/articles/CBMihgFBVV95cUxPV2pkTzYtbFpBR0JCbW1mdHRJc1pJZnhmaW9aWG00NVlEUlBzSjdYbUdEVDEtMGI1LVRQQXRRai1sUmg0emI3Z3o3S3BiQUJpSkNDWXJSUWlQSlpqUzE1X3ZPR2h6RURHZkZ2QkJ4WXZzWFZhNm9BYlA3TnQ5LWsydWpWd09qdw?oc=5)** — Google News. Cloudflare launched Basin, a serverless analytics product aimed at letting developers run data analysis without standing up their own infrastructure. *Why it matters:* a new entrant from a major infrastructure provider adds a low-friction option for ad hoc analytics outside the usual warehouse stack.
+- **[Faster String Aggregations with Dimension Tables](https://duckdb.org/2026/10/02/dimension-tables.html)** — DuckDB Blog. Recommends moving long, repeated strings into a small dimension table with sorted, narrow integer keys, aggregating on those keys, then joining the strings back in at the end. *Why it matters:* a concrete, reusable optimization for a very common group-by pattern on string-heavy data.
+- **[I am so tired of this bullshit](https://rmoff.net/2026/10/01/i-am-so-tired-of-this-bullshit/)** — Robin Moffatt (rmoff.net). Argues, invoking Brandolini's law, that generating AI text takes a colleague little effort while reading it costs the recipient far more, and worries that responding in kind risks a "race to the bottom." *Why it matters:* articulates a tension over AI-generated work product that many data teams are quietly grappling with.
+
+## Releases & tools
+- **[1.13.25 (core) / 0.29.25 (libraries)](https://github.com/dagster-io/dagster/releases/tag/1.13.25)** — Dagster improves declarative-automation performance for partitioned assets with long materialization history and ships a new mobile UI layout alongside a wider default partition-selector window.
+
+## Worth reading
+- **[What Actually Happens When You Call spark.read?](https://dev.to/anikethsdeshpande/what-actually-happens-when-you-call-sparkread-one-line-of-python-a-thousand-tasks-4am7)** — traces `spark.read.parquet` through Spark's lazy execution across five scenarios, pairing each with `explain()` output and Spark UI views.
+- **[Context, Not Models: What Actually Made AI BI Reliable](https://dev.to/datatechbridge/context-not-models-what-actually-made-ai-bi-reliable-572l)** — argues, citing Uber's and LinkedIn's published text-to-SQL systems, that making an LLM reliable against a real warehouse is mostly about the guardrails built around it, not the model itself.
+- **[An Analytics Agent's Permissions Should Survive a Bad Prompt](https://dev.to/lingikaushikreddy/an-analytics-agents-permissions-should-survive-a-bad-prompt-4gb)** — walks through putting the caller's identity in the query path of a Databricks/Unity Catalog lakehouse, so a hostile prompt can't make an agent read data the caller couldn't.
+- **[The Semantic Operating System Inside the Enterprise](https://dev.to/yogendra_colrows/the-semantic-operating-system-inside-the-enterprise-2gj9)** — argues most data teams have a "meaning" problem rather than a data problem, with the same metric redefined independently in dbt, Looker, the catalog and the copilot.
+
+## Community pulse
+- On r/dataengineering, [a thread asked whether home-grown data platform frameworks are "bloated nonsense"](https://www.reddit.com/r/dataengineering/comments/1wvoy6o/homemade_data_platform_frameworks_bloated_nonsense/), describing 13,000- and 30,000-line in-house Python/PySpark frameworks sitting on an Azure Databricks Delta Lakehouse that didn't clearly improve on buying.
+- Also on r/dataengineering, [a thread asked about dbt 2's real-world maturity](https://www.reddit.com/r/dataengineering/comments/1wv2jo5/thoughts_on_dbt_2_maturity/) a few weeks after its release, with the original poster finding the migration documentation scattered across multiple places.
