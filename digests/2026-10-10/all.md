@@ -1,0 +1,10 @@
+# ASOS breach notification ties back to a Snowflake instance
+
+Security led the day: ASOS customers got hack notifications referencing a "Snowflake instance," and Snowflake had to issue a public reassurance. Vendors kept building out AI-agent plumbing — DuckDB shipped an agent-aware CLI mode, Dell added a semantic layer for agents, and Databricks and ClickHouse both published strong architecture write-ups from real teams operating at scale.
+
+## Top 5 across domains
+- **[Data Platform Engineering]** [ASOS hack notification traces to a "Snowflake instance"](https://news.google.com/rss/articles/CBMickFVX3lxTE9uZTZueFh5LTM0LVhXdDJzam01dEx0SndCQW02MW53QTRuT3NsUlV1ZHc1SHlVM25DcjJvSGppRHNvU09EYXk0YWp6N1FPVmxMWmlwTXhtOUZRSUZETGtMZkptRFJnT1NvTk4tRjdHaTQzdw?oc=5), with Snowflake issuing a reassurance statement and coverage explaining what a "Snowflake instance" even is.
+- **[Data Engineering]** [DuckDB's v2.0 CLI ships an agent mode](https://duckdb.org/2026/10/09/agent-mode) that detects AI coding agents and adapts its output format, error reporting, and query limits for them.
+- **[Data Platform Engineering]** [iSAM Funds rebuilt its options research platform on ClickHouse Cloud](https://clickhouse.com/blog/isam-market-data-research-platform), reporting 35–50x compression and 100x faster ingestion on a 10,000x-scale data problem.
+- **[Analytics Engineering]** [Dell is giving AI agents a semantic layer and shared context](https://news.google.com/rss/articles/CBMikgFBVV95cUxNS01DbTlRQlhCZDlQNU90bVJtZzFzZHBERTdYUEFHdEF0NzJFVFkwMEpGcUFDa0JKOHpyWWhkaUI4ekJyR2hXLVBsSG5PWUdrVkhoM0VXNHVELXZVcjBWbkZ1RVpkR0k0NEkzNExyUUFKWjAwTFl0RURuQTNaNE5GUy1YaURDeUpOS1JSMzR3MW94dw?oc=5) over enterprise data in its AI Data Platform.
+- **[Data Engineering]** [GitHub rewrote its Copilot runtime from TypeScript/Node.js to Rust](https://www.infoq.com/news/2026/10/github-copilot-rust-migration/?utm_campaign=infoq_content&utm_source=infoq&utm_medium=feed&utm_term=AI%2C+ML+%26+Data+Engineering), moving 800,000+ lines in about 14.5 weeks using AI-assisted development.

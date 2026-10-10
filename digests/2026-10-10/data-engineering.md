@@ -1,0 +1,19 @@
+# DuckDB's v2.0 CLI ships an agent mode built for AI coding agents
+
+DuckDB's CLI now detects and adapts to AI coding agents, part of a broader day of practitioner posts on scoping agent permissions and trusting pipeline output over green checkmarks. GitHub's AI-assisted rewrite of its Copilot runtime to Rust was the other standout engineering story. Releases were limited to Dagster flagging a breaking change for dbt integrations, and wire coverage was mostly noise.
+
+## Top stories
+- **[Agent Mode in the DuckDB CLI](https://duckdb.org/2026/10/09/agent-mode)** — DuckDB Blog. DuckDB's v2.0 CLI now detects when it's driven by an AI coding agent and switches to compact Markdown tables, early-stops runaway queries, clearly flags truncated results, and reports errors as JSON instead of formatted text. *Why it matters:* a concrete example of a core data tool redesigning its interface specifically for agentic callers rather than humans.
+- **[Github Migrates Copilot Runtime to Rust with AI-Assisted Rewrite](https://www.infoq.com/news/2026/10/github-copilot-rust-migration/?utm_campaign=infoq_content&utm_source=infoq&utm_medium=feed&utm_term=AI%2C+ML+%26+Data+Engineering)** — InfoQ. GitHub moved over 800,000 lines of Copilot runtime code from TypeScript/Node.js to Rust in about 14.5 weeks, using AI-assisted development, N-API interop, automated testing and 128 pull requests, while continuing to ship releases throughout. *Why it matters:* a rare, detailed account of how far AI-assisted migration can go on a large, live production codebase.
+- **[Cloudflare Traces Turns the Proxy Layer into OpenTelemetry Spans, with New Volume-Based Pricing](https://www.infoq.com/news/2026/10/cloudflare-traces-open-beta/?utm_campaign=infoq_content&utm_source=infoq&utm_medium=feed&utm_term=AI%2C+ML+%26+Data+Engineering)** — InfoQ. Cloudflare's Traces, now in open beta, extends automatic OpenTelemetry tracing from Workers to security rules, transformations, cache, routing and origin handling, and accepts W3C traceparent headers; pricing shifts to ingestion and retention volume from December 1. *Why it matters:* another piece of pipeline-adjacent infrastructure moving to usage-based pricing, worth watching for cost planning.
+
+## Releases & tools
+- **[Dagster 1.13.26 / 0.29.26](https://github.com/dagster-io/dagster/releases/tag/1.13.26)** — Breaking change: `dagster-dbt` no longer installs `dbt-core` by default (now the `dagster-dbt[dbt-core]` extra), and oversized sensor-triggered runs now fail with an explicit error instead of silently queuing.
+
+## Worth reading
+- **[Data Engineering Is the Cache Invalidation Problem Ft. Josh Wills](https://motherduck.com/blog/cache-invalidation-problem-data-engineering-josh-wills/)** — MotherDuck's Josh Wills argues much of data engineering's recurring pain reduces to cache invalidation in disguise.
+- **[Your agent's worst query is read-only](https://dev.to/mudit_builds/your-agents-worst-query-is-read-only-4n0j)** — Argues the real risk from AI agents isn't a dramatic `DROP TABLE` but a scoped-looking read query that quietly locks or overloads a production table, and that credentials, not prompts, are the only reliable guardrail.
+- **[I filtered the FMCSA census (4.5M rows) down to carriers that look real](https://dev.to/vittoria000li/i-filtered-the-fmcsa-census-45m-rows-down-to-carriers-that-look-real-3h1b)** — A walkthrough of cleaning a public 4.5M-row government dataset full of self-reported, unvalidated fields, including carriers claiming thousands of trucks while reporting zero miles.
+
+## Community pulse
+- On r/dataengineering, a thread on [Snowflake's Semantic View](https://www.reddit.com/r/dataengineering/comments/1x1za6g/snowflake_semantic_view_how_are_you_using_it/) surfaced confusion about how it's meant to be structured, and how AI agents writing their own SQL actually end up using (or ignoring) the defined semantic layer.

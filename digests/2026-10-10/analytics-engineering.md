@@ -1,0 +1,19 @@
+# Dell adds a semantic layer so AI agents can query enterprise data
+
+Dell's AI Data Platform expansion, giving agents a semantic layer and shared data context over enterprise data, was the clearest signal of where vendors think analytics engineering is heading. dbt Labs' roundup covers the same shift at the ecosystem level, while Lightdash and Cube releases quietly hardened how AI agents authenticate against warehouses. The rest of the window was dominated by introductory dbt tutorials.
+
+## Top stories
+- **[Dell Gives AI Agents a Map of Enterprise Data](https://news.google.com/rss/articles/CBMikgFBVV95cUxNS01DbTlRQlhCZDlQNU90bVJtZzFzZHBERTdYUEFHdEF0NzJFVFkwMEpGcUFDa0JKOHpyWWhkaUI4ekJyR2hXLVBsSG5PWUdrVkhoM0VXNHVELXZVcjBWbkZ1RVpkR0k0NEkzNExyUUFKWjAwTFl0RURuQTNaNE5GUy1YaURDeUpOS1JSMzR3MW94dw?oc=5)** — HPCwire, DataCentreNews UK, Tech Edition. Dell is expanding its AI Data Platform with a semantic layer and shared data context for AI agents, alongside added GPU acceleration. *Why it matters:* another large vendor betting that agents need an explicit semantic layer over enterprise data rather than raw table access.
+- **[Roundup: Personal agents, AI policy, GPT-6.1 Astra, and Jev decision models](https://roundup.getdbt.com/p/roundup-personal-agents-ai-policy)** — The Analytics Engineering Roundup (dbt Labs). This edition covers the political fight over data centers, the shape of the post-AI data stack, claims of physical AI, and an update on the OpenAI/Hugging Face incident. *Why it matters:* a weekly read of where the ecosystem's attention is heading, from a Labs-run newsletter with wide reach.
+
+## Releases & tools
+- **[Lightdash 2.543.0](https://github.com/lightdash/lightdash/releases/tag/2.543.0)** — A run of releases tightened AI-agent access controls: an org-level ceiling on agent capabilities, Trino agents running under a separate service-account identity, and dbt builds resolved through credential resolvers instead of the server's own identity.
+- **[Cube v1.8.3](https://github.com/cube-js/cube/releases/tag/v1.8.3)** — Adds read-only Athena driver support via UNLOAD export, a new `cube ossie` CLI conversion command, and multi-stage query performance improvements in tesseract.
+- **[SQLGlot v30.22.0](https://github.com/tobymao/sqlglot/releases/tag/v30.22.0)** — Breaking change: removes `infer_schema` from the optimizer.
+- **[Great Expectations 1.24.0](https://github.com/fivetran/great_expectations/releases/tag/1.24.0)** — Adds Python 3.14 support, extending the supported range to Python 3.10–3.14.
+- **[What's New in Wire 4.x](https://blog.rittmananalytics.com/whats-new-in-wire-4-x-multi-agent-development-dbt-charts-agents-schema-more-7d07acb467a7?source=rss------analytics_engineering-5)** — Rittman Analytics Blog. Wire 4.1.0, the delivery-blueprint plugin for Claude Code and Gemini CLI, adds multi-agent development, dbt charts and an agents schema.
+
+## Worth reading
+- **[Data Quality Pipelines with dbt: Quarantine Bad Rows Before They Reach Analytics](https://medium.com/@anusarijal1919/data-quality-pipelines-with-dbt-quarantine-bad-rows-before-they-reach-analytics-by-anusha-rijal-b34c05c65c53?source=rss------analytics_engineering-5)** — Argues that a failing dbt test should quarantine the offending rows rather than just report a failure, so bad data never reaches downstream models.
+- **[Why Your dbt BigQuery Configs Are Lying to You](https://medium.com/@Timothy_Reeves/why-your-dbt-bigquery-configs-are-lying-to-you-94ecb22f9c7b?source=rss------dbt-5)** — Traces a runaway metrics-storage bill back to dbt BigQuery configuration choices that looked harmless in isolation.
+- **[What Actually Makes a Good Analytics Engineer?](https://medium.com/@pchandrika0613/what-actually-makes-a-good-analytics-engineer-8ea2d8a644b6?source=rss------analytics_engineering-5)** — Pushes back on tool-first framing of the role, arguing judgment and business context matter more than the stack.
