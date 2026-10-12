@@ -1,0 +1,10 @@
+# A lakehouse layout benchmark and a run of control-plane, contract and real-time skepticism
+
+A quiet news day across all three domains, with wire coverage mostly stock notes and unrelated noise rather than data stories. The practitioner writing that did stand out converged on a theme: question defaults — in table layout, in "real-time everything," and in how much governance self-service data access actually needs.
+
+## Top 5 across domains
+- **[Data Engineering]** [When Should You Use Liquid Clustering? Benchmarking Lakehouse Layout Strategies](https://www.infoq.com/articles/liquid-clustering-lakehouse-layout/?utm_campaign=infoq_content&utm_source=infoq&utm_medium=feed&utm_term=AI%2C+ML+%26+Data+Engineering) — a rigorous comparison of Liquid Clustering, ZOrdering and partitioning on Delta Lake surfaces two undocumented failure modes.
+- **[Data Platform Engineering]** [The Data Platform Is Becoming Invisible. The Control Plane Is Not.](https://medium.com/@chameleon13/the-data-platform-is-becoming-invisible-the-control-plane-is-not-cf0cfd1ce930) — simpler self-service access depends on a stronger control plane for identity, semantics, policy and cost.
+- **[Data Engineering]** [AWS Glue Concurrency Is Capped by One Subnet, Not Your Whole VPC](https://dev.to/kiran_gunturu_022085015ec/aws-glue-concurrency-is-capped-by-one-subnet-not-your-whole-vpc-1220) — controlled tests show Glue's concurrency ceiling is a single subnet's free IPs, with a straightforward fix.
+- **[Analytics Engineering]** [Semantic Layers (Part 2): Building One Your AI Agents Can Use](https://yasharma06.medium.com/semantic-layers-part-2-building-one-your-ai-agents-can-use-ca44d04e7628) — a path from YAML metric definitions to an AI agent that answers revenue questions with Finance's own numbers.
+- **[Data Platform Engineering]** [Why Should We Use Data Contracts? (And Why Almost Nobody Does It Right)](https://medium.com/@feyzullahertan/why-should-we-use-data-contracts-and-why-almost-nobody-does-it-right-e868e25d2cea) — seven years of platform-engineering experience on why most data-contract adoptions fall short in practice.
