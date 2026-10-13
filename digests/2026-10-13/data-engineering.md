@@ -1,0 +1,20 @@
+# Spotify's AI-driven code surge forces a rethink of testing and rollback
+
+A quiet day for new releases but a solid crop of practitioner engineering: Spotify describes the operational fallout of AI-assisted development, Polars 2.0 upgraders hit silent behaviour changes, and a new DuckDB extension stores a full native database directly on object storage. Gunnar Morling shipped a Parquet library update with meaningful read-performance work.
+
+## Top stories
+- **[Spotify More Than Doubled Monthly Code Changes as AI Accelerated Development](https://www.infoq.com/news/2026/10/spotify-ai-quality-controls/?utm_campaign=infoq_content&utm_source=infoq&utm_medium=feed&utm_term=AI%2C+ML+%26+Data+Engineering)** — InfoQ. Spotify reports that AI-assisted development more than doubled monthly merged changes, prompting it to rework testing, observability, rollback capacity, workload prioritization and automated maintenance. *Why it matters:* a concrete look at the operational controls a large engineering org needed once AI raised code throughput.
+- **[Polars 2.0: five things that change when you upgrade, three of them silently](https://dev.to/ground_truth_books/polars-20-five-things-that-change-when-you-upgrade-three-of-them-silently-b38)** — DEV. Testing the same five snippets under 1.44.2 and 2.0.0, the author finds that Polars 2.0's streaming-by-default lazy engine silently drops the row-order guarantee on operations like left joins, among other quiet changes that don't raise an error. *Why it matters:* code that still runs after upgrading can now return different results, which is easy to miss without explicit tests.
+- **[How to Design an IoT Data Pipeline for Multi-Frequency Measurements](https://dev.to/timecho/how-to-design-an-iot-data-pipeline-for-multi-frequency-measurements-57ej)** — DEV. The piece lays out a design and test framework, built on Apache IoTDB, for modelling sensor streams that each have a different natural sampling rate while still supporting cross-sensor queries. *Why it matters:* a practical pattern for a problem most generic pipeline advice skips over.
+- **[A Real DuckDB Database in S3, with Nothing Else to Run](https://dentiny.github.io/posts/duckdb-on-object-storage/)** — Hacker News. `duckdb_object_storage`, a new community extension, stores a full native DuckDB database — including indexes, constraints and the WAL — directly in S3 with no catalog service, supporting one writer and many near-native-speed readers. *Why it matters:* a complete database backed by nothing but a bucket suits ephemeral compute, though it's DuckDB-only and single-writer.
+
+## Releases & tools
+- **[Hardwood 1.1.0.Beta2](https://www.morling.dev/blog/row-group-control-faster-s3-reads-footer-caching-hardwood-1-1-0-beta2/)** — Gunnar Morling's Parquet library adds writer row-group control, faster reads for many workloads (especially from S3), Parquet footer caching/reuse, and id-based access to dictionary-encoded columns.
+
+## Worth reading
+- **[Presentation: You Can't Trust Your AI Bill. And Neither Can I](https://www.infoq.com/presentations/ai-cloud-cost-economics/?utm_campaign=infoq_content&utm_source=infoq&utm_medium=feed&utm_term=AI%2C+ML+%26+Data+Engineering)** — InfoQ. Erik Peterson argues AI spend is eclipsing cloud bills and discusses "tokenmaxxing," unit economics and forced developer promotions.
+
+## Community pulse
+- A r/dataengineering thread, [Is there still value in learning DE fundamentals from books and courses now that AI writes most of the code?](https://www.reddit.com/r/dataengineering/comments/1x45prs/is_there_still_value_in_learning_de_fundamentals/), weighs whether foundational learning still matters when AI can generate most pipeline code.
+- Robin Moffatt [criticized](https://bsky.app/profile/rmoff.net/post/3mxotz5u3ts2a) Reddit's restrictions on RSS access, arguing they undercut the open web.
+- DuckDB's Bluesky account [highlighted a DuckCon talk](https://bsky.app/profile/duckdb.org/post/3mxprc6dm5k2h) from Merck's Nicolas Renkamp on using SQLFrame to migrate from PySpark to DuckDB without code changes.
