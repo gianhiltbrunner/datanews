@@ -1,0 +1,15 @@
+# LinkedIn's remote shuffle service cuts Spark runtimes 14%, costs 90%
+
+A quiet day for breaking news: the standout item is Data Engineering Weekly's roundup of infrastructure write-ups from LinkedIn, Netflix, Airbnb and Zalando, alongside Google's release of a new open-weight multimodal embedding model. Most of the rest of the feed was SEO tutorials, interview-prep content and career/job-market chatter.
+
+## Top stories
+- **[Data Engineering Weekly #292](https://www.dataengineeringweekly.com/p/data-engineering-weekly-292)** — Data Engineering Weekly. Highlights include LinkedIn moving Spark and Flink shuffle to a remote NVMe-backed service (Apache Celeborn), cutting Spark runtimes 14% and shuffle costs 90%; Netflix's QuipuDB-backed observability knowledge graph linking metrics, deployments and incidents; and Datalogy's Zephon, which computes tokenization and token mixing on demand from lakehouse formats instead of re-materializing training corpora. *Why it matters:* concrete, numbers-backed infrastructure wins from large-scale production teams are rarer than the usual tutorial volume.
+- **[EmbeddingGemma 2 Expands Beyond Text to Support Code, Images, Video, and Audio](https://www.infoq.com/news/2026/10/embeddinggemma-2-multimodal/?utm_campaign=infoq_content&utm_source=infoq&utm_medium=feed&utm_term=AI%2C+ML+%26+Data+Engineering)** — InfoQ. Google released EmbeddingGemma 2, a compact, Apache 2.0-licensed, open-weight multimodal embedding model built on Gemma 4, aimed at on-device semantic search and RAG. *Why it matters:* a free, multimodal, on-device embedding model lowers the bar for teams building retrieval pipelines without a hosted embeddings API.
+
+## Worth reading
+- **[Why Stripe payouts don't match your books](https://dev.to/akarazhev/why-stripe-payouts-dont-match-your-books-3aoa)** — Walks through reconciling a Stripe payout gap into eight distinct causes (timing cutoffs, fees, refunds) rather than treating it as one number to explain.
+- **[CRM data migration: what breaks, from 9,000 contacts](https://dev.to/retailboxautomation/crm-data-migration-what-breaks-from-9000-contacts-1bl)** — A migration of 9,000 contacts and 1,000 accounts into Dynamics 365 surfaces the recurring failure modes — duplicate records, fields with no destination equivalent, activity history that doesn't move by default.
+- **[Build a Career That Looks Like You](https://joereis.substack.com/p/build-a-career-that-looks-like-you)** — Joe Reis on career advice in light of Anthropic's internal research on AI's effect on hiring and employment.
+
+## Community pulse
+- On r/dataengineering, practitioners debated [how to give AI agents safe access to data](https://www.reddit.com/r/dataengineering/comments/1x9ruae/how_do_people_provide_data_access_to_ai_agents/) without an intermediary query layer, and swapped notes on [migrating thousands of DAGs from Airflow 2.10 to 3.2](https://www.reddit.com/r/dataengineering/comments/1x9qpvn/airflow_version_upgrade/) and the import-statement breakage that comes with it.
