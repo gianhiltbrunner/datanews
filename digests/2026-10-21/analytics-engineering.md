@@ -1,0 +1,17 @@
+# Lightdash ships three releases as a dbt bug-hunt exposes test-coverage gaps
+
+Beyond a burst of Lightdash releases, the strongest reading was practitioner-written: a planted-bug experiment that got all dbt tests green while still losing rows, plus pieces on metric-definition standards, warehouse design and incremental materializations.
+
+## Top stories
+- **[I rebuilt my hand-written pipeline in dbt and planted the bugs myself](https://medium.com/@immairaj/i-rebuilt-my-hand-written-pipeline-in-dbt-and-planted-the-bugs-myself-dc47e145b772?source=rss------dbt-5)** — Medium. The author deliberately planted bugs in a dbt rebuild of a hand-written pipeline; all 31 dbt tests passed, yet three rows still vanished without a trace. *Why it matters:* a concrete reminder that a green dbt test suite doesn't guarantee row-level completeness.
+- **[One Metric, Four Standards](https://medium.com/@alex.nykolaiszyn/one-metric-four-standards-77fc3c5e2007?source=rss------dbt-5)** — Medium. Compares how ODCS, ODPS, Ossie and dbt's MetricFlow each define and standardize metrics, and argues each only solves part of the problem. *Why it matters:* highlights the lack of a single agreed standard for metric definitions as semantic layers proliferate.
+- **[Activity Schemas, Funnel Tables, and Semantic Layers: My Preferred Data Warehouse Design](https://medium.com/@HarlanH/activity-schemas-funnel-tables-and-semantic-layers-my-preferred-data-warehouse-design-aa5896d74141?source=rss------analytics_engineering-5)** — Medium. Lays out a warehouse design built on activity schemas, funnel tables and semantic layers, drawn from years of business analytics work. *Why it matters:* a practitioner opinion on data modeling that's likely to spark debate on modeling conventions.
+- **[What I learned reading dbt's incremental materialization: rebuilds, indexes, and the adapter layer](https://ahmedanwar-45178.medium.com/what-i-learned-reading-dbts-incremental-materialization-rebuilds-indexes-and-the-adapter-layer-8855f5d50fc0?source=rss------dbt-5)** — Medium. A code-level walkthrough of how dbt's incremental materialization handles rebuilds, indexes and adapter-specific behavior. *Why it matters:* useful for anyone debugging unexpected incremental-model behavior across warehouse adapters.
+
+## Releases & tools
+- **[3.4.0](https://github.com/lightdash/lightdash/releases/tag/3.4.0)** — Lightdash shipped 3.2.0 through 3.4.0 in quick succession: AI agent follow-ups can now update a published Deep Research report, Deep Research edits are gated on the contentTools prompt section, a new YAML content-as-code uploader adds Storybook previews, and pre-aggregates rebuild automatically on compile when changed.
+
+## Worth reading
+- **[When SQL Isn't Enough: Python Models in dbt](https://npogeant.medium.com/when-sql-isnt-enough-python-models-in-dbt-a0bb2f2b0154?source=rss------dbt-5)** — Covers how dbt runs Python models inside the warehouse, what `.to_pandas()` actually costs, and why smaller Python models work best.
+- **[The Loop Is a Trap](https://medium.com/@alexroman94.ar/the-loop-is-a-trap-dd6209e3bdf9?source=rss------analytics_engineering-5)** — Looks at what happens in a warehouse when a single computation fans out into thousands.
+- **[The Complete Guide to dbt Slim CI](https://medium.com/@hugolu87/the-complete-guide-to-dbt-slim-ci-with-video-tutorial-261b01895abf?source=rss------dbt-5)** — A walkthrough of setting up dbt's Slim CI, with an accompanying video.
