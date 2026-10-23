@@ -1,0 +1,17 @@
+# Four competing metric standards show the semantic layer still lacks consensus
+
+A quiet 72-hour window was mostly AI-partnership press releases, but one analysis piece cut through: a comparison of four competing ways to define a metric. Lightdash shipped a run of AI-composer features, and two practitioner write-ups dug into dbt's Python models and a versioned-release pattern for Snowflake.
+
+## Top stories
+- **[One Metric, Four Standards](https://medium.com/@alex.nykolaiszyn/one-metric-four-standards-77fc3c5e2007?source=rss------analytics_engineering-5)** — Medium. Compares how ODCS, ODPS, Ossie and dbt's MetricFlow each define and solve part of the metric problem, and argues none of the four alone is sufficient. *Why it matters:* semantic-layer standardization keeps fragmenting even as more teams build on dbt MetricFlow or a competing metric layer.
+- **[Stop Publishing Half-Built Data: Versioned Data Releases for dbt on Snowflake](https://medium.com/@rakeshsharma14317/stop-publishing-half-built-data-versioned-data-releases-for-dbt-on-snowflake-5b2e50ef274a?source=rss------dbt-5)** — Medium. Describes dbt-atomic-promotion, a pattern for isolated dbt builds, validated releases and version-based rollback that keeps consumer-facing schemas stable. *Why it matters:* a concrete pattern for teams tired of partial dbt runs leaking into production schemas.
+
+## Releases & tools
+- **[Lightdash 3.41.0](https://github.com/lightdash/lightdash/releases/tag/3.41.0)** — the latest in a same-day run of releases adding Slack chart images, custom chart types and visualize-tool support to Lightdash's AI composer.
+- **[Great Expectations 1.24.1](https://github.com/fivetran/great_expectations/releases/tag/1.24.1)** — extends four LIKE-pattern expectations to Oracle and SingleStore and broadens MySQL dialect coverage.
+
+## Worth reading
+- **[When SQL Isn't Enough: Python Models in dbt](https://npogeant.medium.com/when-sql-isnt-enough-python-models-in-dbt-a0bb2f2b0154?source=rss------analytics_engineering-5)** — Medium. Walks through how dbt runs Python models inside the warehouse, what `.to_pandas()` actually costs, and why the best Python model stays small.
+- **[Stop Picking T-Shirt Sizes: What Running Adaptive Compute Taught Me](https://medium.com/snowflake/stop-picking-t-shirt-sizes-what-running-adaptive-compute-taught-me-b2b8f4973cdd?source=rss------dbt-5)** — Snowflake Builders Blog. First of a four-part series on running Snowflake in the "Agent Era," where adaptive compute replaced manual warehouse-size picking with two different dials.
+- **[From Raw SOQL to a Governed Semantic Layer: Four Ways I Connected Claude to Salesforce](https://news.google.com/rss/articles/CBMirAFBVV95cUxPcTJSeGJubnZfTjR0ZFRnVmlTNTJhQUZsSU1jOUJmLVVsb0xrOGM0NHVpSnRBRGlLdEo0elFmUXNFZ3gzQi1HRGpCaGRYVWhIVHlLbjNBYmlmc3Rza29aSTQ1REFWa0N0QUdvWl80eUwtNEdPVmlacEJzNk1mQXNXMVBMYnBqQjk3c1JQQ1F1MWM3SXFMTXBna3ZuQlpORndpejZ4YzUwZVcycW9F?oc=5)** — HackerNoon, via Google News. Outlines four approaches to wrapping raw Salesforce SOQL behind a governed semantic layer before connecting Claude to it.
+- **[I Built a Marketing Intelligence Dashboard That Answers Business Questions in Plain English](https://medium.com/@fuddiebiola/i-built-a-marketing-intelligence-dashboard-that-answers-business-questions-in-plain-english-6d12698b5db1?source=rss------dbt-5)** — Medium. A practitioner account of combining dbt, DuckDB and Wren AI behind a governed semantic layer to turn fragmented marketing data into a natural-language dashboard.
