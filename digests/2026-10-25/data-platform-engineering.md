@@ -1,0 +1,12 @@
+# Hacker tied to Ticketmaster's Snowflake-linked breach pleads guilty in 165-company spree
+
+Today's clearest platform story is a legal one: a guilty plea in the Snowflake customer-account breach campaign that hit Ticketmaster and over a hundred other companies. Reddit's r/databricks carried the rest of the day's practitioner signal, including a freshness-SLA discussion and a new Python API for materialized views and streaming tables.
+
+## Top stories
+- **[Hacker Linked to Ticketmaster Snowflake Breach Pleads Guilty in 165-Company Attack](https://news.google.com/rss/articles/CBMiugFBVV95cUxPdGJiLWpwS2RrN0oyNDhmWDZ4YTg5c2FyMmlkelFiVDhINDVhLUNqWFZ2ODhPaS1IbkxOdmNxaTlGazhnNVA3MFVkU0tRUzROR3IwQTBfNjVscHZDa1lXbWZna2FrVExLOFVzbWRwel9HOTRBaDExOGZ6dmI1YlJNMDdQNVcxS2l2UTkyVjAtenpOYl9kTHJMb2Z3TzRMTUxiV2ZnOGIzSmxOWXh4SENuWlBia1phb2U1dHc?oc=5)** — TicketNews, via Google News. A hacker connected to the 2024 Snowflake customer-account breach campaign, which exposed data from Ticketmaster and roughly 165 other companies using stolen credentials against unprotected accounts, has pleaded guilty. *Why it matters:* it's a reminder that the breach wasn't a Snowflake platform flaw but a credential-hygiene failure on the customer side — the kind of gap that MFA and network-policy defaults now target.
+
+## Worth reading
+- **[Data Is Becoming Easier to Use. Where Is the Business Value?](https://medium.com/@chameleon13/data-is-becoming-easier-to-use-where-is-the-business-value-ef9a0ca8dc2f?source=rss------data_platform-5)** — Medium. Surveys five recent developments from Google, Snowflake and Meta and asks whether easier data access is actually translating into better decisions.
+
+## Community pulse
+- On r/databricks, one engineer asked [how others handle upstream freshness for data products](https://www.reddit.com/r/databricks/comments/1xe4gpl/freshness/), describing a pre-pipeline check against a YAML registry of max lag per table that fails the job when an input goes stale. Others shared a [full month-end finance app built entirely on Databricks Apps](https://www.reddit.com/r/databricks/comments/1xebsig/a_full_monthend_finance_app_built_on_databricks/), and noted that [dp.materialized_view and dp.table can now be used directly in serverless notebooks](https://www.reddit.com/r/databricks/comments/1xe953l/materialized_views_and_streaming_tables_from/) to create standalone materialized views and streaming tables.
