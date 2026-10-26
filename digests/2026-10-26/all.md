@@ -1,0 +1,10 @@
+# A Carnegie Mellon take on data agents leads a quiet day across the data stack
+
+Today's strongest piece is dbt Labs' roundup interview on why data agents still fall short of real analytical work. Elsewhere, two practitioner migration write-ups stood out — Razorpay's move of 2,500 DAGs to Airflow 3 and a dbt v1-to-v2 upgrade guide — while Databricks quietly closed a long-standing serverless gap by bringing DataFrame caching to preview.
+
+## Top 5 across domains
+- **[Analytics Engineering]** [Can data agents do real analysis?](https://roundup.getdbt.com/p/can-data-agents-do-real-analysis) — Carnegie Mellon's Shreya Shankar on why data agents fall short at real analytics work and what a semantic layer changes.
+- **[Data Engineering]** [How Razorpay Moved 2,500 DAGs to Airflow 3, One DAG at a Time](https://engineering.razorpay.com/how-razorpay-moved-2-500-dags-to-airflow-3-one-dag-at-a-time-71419355a07b?source=rss------data_engineering-5) — a real-numbers account of migrating a large production Airflow fleet incrementally.
+- **[Data Platform Engineering]** [DataFrame caching is now in Public Preview on Databricks serverless compute](https://www.reddit.com/r/databricks/comments/1xfp1f7/dataframe_caching_is_now_in_public_preview_on/) — removes a common reason teams kept a classic cluster around, though the cache behaves differently from the classic one.
+- **[Analytics Engineering]** [Upgrading from dbt v1 to dbt v2: A Practical Guide for Snowflake Teams](https://medium.com/@pranayvatsal/upgrading-from-dbt-v1-to-dbt-v2-a-practical-guide-for-snowflake-teams-f4be01026c2c?source=rss------dbt-5) — a migration guide for the new Rust-based dbt engine, formerly Fusion.
+- **[Data Engineering]** [Auto CDF Moved the CDC Tax From Writes to Reads: Delta CDF vs Auto CDF vs Spark 4.2 CHANGES](https://dev.to/firfircelik/auto-cdf-moved-the-cdc-tax-from-writes-to-reads-delta-cdf-vs-auto-cdf-vs-spark-42-changes-9bb) — argues Databricks' Auto CDF and Spark 4.2's CHANGES clause relocate change-data-feed cost rather than remove it.
