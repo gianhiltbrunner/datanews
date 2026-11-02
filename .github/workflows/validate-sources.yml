@@ -1,8 +1,6 @@
 name: Validate sources
 
 on:
-  schedule:
-    - cron: "0 6 * * 1" # Mondays
   workflow_dispatch:
 
 permissions:
